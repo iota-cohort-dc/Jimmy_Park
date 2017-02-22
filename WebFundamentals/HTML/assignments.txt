@@ -1,0 +1,4 @@
+Jaes-MBP:HTML jaepark75$ ls -R
+about.txt		indentation.html
+Jaes-MBP:HTML jaepark75$ touch assignments.txt
+Jaes-MBP:HTML jaepark75$ 
