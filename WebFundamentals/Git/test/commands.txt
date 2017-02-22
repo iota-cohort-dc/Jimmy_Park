@@ -1,0 +1,8 @@
+ls to list
+cd .. change directory down one subfolder
+cd ~ change directory down to root directory
+rm {file name} remove file name
+rmdir {folder name} remove empty folder
+rm -rf {folder name} remove folder with files in it
+touch {file name} create new file and name it
+mkdir {file name} create new folder and name it

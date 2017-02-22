@@ -1,0 +1,13 @@
+Navigate to DojoAssignments
+git init
+git status
+git add .
+git commit -m”add files to GitHub”
+git status
+Go to Github.com
+Click on new project.
+Name project
+copy and paste both lines of text into git bash/ command line.
+In command line 
+git push
+

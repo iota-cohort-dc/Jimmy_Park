@@ -1,0 +1,10 @@
+Commands in a text file:
+
+git init
+git status
+git add . 
+git (file name)
+git status
+git commit -m”message about your contribution”
+git log
+git diff
