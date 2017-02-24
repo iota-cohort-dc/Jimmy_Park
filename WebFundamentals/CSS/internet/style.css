@@ -1,0 +1,140 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+  font-family: sans-serif;
+}
+#wrapper{
+  width: 1200px;
+  height: 1000px;
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+#header{
+  width: auto;
+  height: auto;
+}
+#globe{
+  width: 90px;
+  display: inline-block;
+  margin-bottom: -19px;
+}
+#the_internet{
+  color: black;
+  font-size: 50px;
+  display: inline-block;
+  margin-bottom: -20px;
+  padding-bottom: 18px;
+}
+#world_wide_web{
+  background: -webkit-linear-gradient(#3373a0, #5c8fb4, #3373a0); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#3373a0, #5c8fb4, #3373a0); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#3373a0, #5c8fb4, #3373a0); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#3373a0, #5c8fb4, #3373a0); /* Standard syntax (must be last) */
+    color: white;
+  padding-top: 5px;
+      padding-left: 10px;
+    padding-bottom: 5px;
+  font-size: 50px;
+  font-weight: 100;    
+}
+#main_content{
+  width: auto;
+  height: auto;
+    
+}
+
+#left_column{
+  display: inline-block;
+  width: 300px;
+}
+#left_sentence_1{
+  text-align: left;
+    margin-top: 20px;
+    
+}
+#left_sentence_2{
+  text-align: left;
+    margin-top: 20px;
+}
+#watch_a_video{
+    
+    height: px;
+    margin-top: 20px;
+  display: block;
+  border-radius:8px;
+  box-shadow:4px 4px 5px grey;
+  background-image: -ms-linear-gradient(top, #5F98BF 0%, #1C6699 100%);
+
+background-image: -moz-linear-gradient(top, #5F98BF 0%, #1C6699 100%);
+
+background-image: -o-linear-gradient(top, #5F98BF 0%, #1C6699 100%);
+
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5F98BF), color-stop(100, #1C6699));
+
+background-image: -webkit-linear-gradient(top, #5F98BF 0%, #1C6699 100%);
+
+background-image: linear-gradient(to bottom, #5F98BF 0%, #1C6699 100%);
+}
+#more_resources{
+  display: block;
+  border-radius:8px;
+  margin-top: 20px;
+  box-shadow:4px 4px 5px grey;
+  background-image: -ms-linear-gradient(top, #EDAA63 0%, #F57117 100%);
+
+
+background-image: -moz-linear-gradient(top, #EDAA63 0%, #F57117 100%);
+
+background-image: -o-linear-gradient(top, #EDAA63 0%, #F57117 100%);
+
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EDAA63), color-stop(100, #F57117));
+
+background-image: -webkit-linear-gradient(top, #EDAA63 0%, #F57117 100%);
+
+background-image: linear-gradient(to bottom, #EDAA63 0%, #F57117 100%);
+}
+
+#ad_background{
+    
+}
+
+
+#right_column{
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+}
+#header span{
+  color:#1a6699;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{}
