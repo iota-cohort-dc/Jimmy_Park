@@ -1,0 +1,271 @@
+#wrapper {
+    width: 1080px;
+    height: 1000px;
+    background: #42275a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #42275a, #734b6d);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #42275a, #734b6d);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#header {
+    background-color: #f6f6f6;
+    height: 70px;
+}
+
+#picme {
+    width: 466px;
+    border: 8px solid #bab9ba;
+    display: inline-block;
+    margin: 20px;
+}
+
+#something2 {
+    position: relative;
+    top: 19px;
+    left: 20px;
+    color: black;
+}
+
+h2 {
+    position: relative;
+    left: 2px;
+    bottom: 77px;
+}
+
+#aboutme {
+    width: 454px;
+    height: 230px;
+    position: relative;
+    left: 537px;
+    bottom: 361px;
+    padding: 20px;
+    margin: 20px;
+    border-top: 50px solid grey;
+    background: #8e9eab;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #8e9eab, #eef2f3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #8e9eab, #eef2f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#metext {
+    position: relative;
+    left: -17px;
+    bottom: 86px;
+    font-size: 18px;
+    width: 475px;
+}
+
+#something {
+    position: relative;
+    bottom: 36px;
+    left: 681px;
+}
+
+#lamodeimage {
+    width: 297px;
+    height: 164px;
+    position: relative;
+    top: -70px;
+    left: 1px
+}
+
+#familyimage {
+    width: 297px;
+    height: 164px;
+    position: relative;
+    top: -70px;
+    left: 1px
+}
+
+#fiveimage {
+    width: 297px;
+    height: 164px;
+    position: relative;
+    top: -70;
+    left: 1px
+}
+
+#mainbodybtm {
+    background: #42275a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #42275a, #734b6d);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #42275a, #734b6d);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#left {
+    width: 300px;
+    height: 565px;
+    position: relative;
+    top: -312px;
+    left: 20px;
+    display: inline-block;
+    margin: 20px;
+    background-color: #efe9ef;
+    border-top: 60px solid grey;
+}
+
+#middle {
+    width: 300px;
+    height: 565px;
+    position: relative;
+    top: -312px;
+    left: 20px;
+    display: inline-block;
+    margin: 20px;
+    background-color: #efe9ef;
+    border-top: 60px solid grey;
+}
+
+#right {
+    width: 300px;
+    height: 565px;
+    position: relative;
+    top: -312px;
+    left: 20px;
+    display: inline-block;
+    margin: 20px;
+    background-color: #efe9ef;
+    border-top: 60px solid grey;
+}
+
+h1 {
+    color: white;
+    padding-left: 20px;
+    top: 20px;
+}
+
+p {
+    color: black;
+    padding: 10px;
+}
+
+#aboutpic {
+    position: relative;
+    top: -61px;
+    left: 0px;
+    margin: -2px;
+    padding: 0px;
+    width: 280;
+    left: 11px;
+}
+
+#tech {
+    position: relative;
+    left: 20px;
+    background: grey;
+    padding-top: 13px;
+    padding-bottom: 11px;
+    padding-left: 18px;
+    bottom: 49px;
+    color: white;
+    margin-right: 20px;
+    margin-left: -20px;
+}
+
+#lamode {
+    position: relative;
+    top: -60px;
+    font-size: 28px;
+}
+
+#family {
+    position: relative;
+    top: -60px;
+    font-size: 28px;
+}
+
+#five {
+    position: relative;
+    top: -60px;
+    font-size: 28px;
+}
+
+#badges {
+    height: 100px;
+    width: 258px;
+    position: relative;
+    top: -55px;
+    left: 15px;
+    display: inline-block;
+}
+
+#icon {
+    height: 40px;
+    width: 40px;
+    margin: 4px;
+}
+
+#buttonbtm1 {
+    background: green;
+    border: 1px solid black;
+    color: white;
+    width: 80px;
+    padding: 2px;
+    border-radius: 13px;
+    text-align: center;
+    position: relative;
+    top: -66px;
+    padding: 6px;
+    left: 95px;
+}
+
+#buttonbtm2 {
+    background: green;
+    border: 1px solid black;
+    color: white;
+    width: 145;
+    padding: 2px;
+    border-radius: 13px;
+    text-align: center;
+    position: relative;
+    top: -66px;
+    padding: 6px;
+    left: 63px;
+}
+
+#buttonbtm3 {
+    background: green;
+    border: 1px solid black;
+    color: white;
+    width: 92;
+    padding: 2px;
+    border-radius: 13px;
+    text-align: center;
+    position: relative;
+    top: -67px;
+    padding: 6px;
+    left: 89px;
+}
+
+h4 {
+    text-align: center;
+}
+
+#icontoname {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+#namelink {
+    text-decoration: underline;
+    color: blue;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+}
+
+footer {
+    background: f7f7f7;
+    text-align: center;
+    display: block;
+    bottom: 10px;
+}
+
+{}

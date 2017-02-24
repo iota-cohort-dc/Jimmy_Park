@@ -1,0 +1,248 @@
+
+/**{
+  outline: 1px dotted line;
+}*/
+
+#wrapper{
+  width: 970px;
+  height: 1200px;
+  background: #205273;
+}
+#header{
+}
+#pythonimg {
+    width: 408px;
+    height: 113px;
+    margin-top: 20px;
+    margin-left: 32px;
+}
+#headerright{
+}
+#textsize_n_l {
+    color: white;
+    position: relative;
+    top: -146px;
+    left: 764px;
+    font: arial;
+}
+input {
+    text-align: center;
+    padding: 4px;
+    margin: 19px;
+}
+#searchboxbase {
+    background: #444444;
+    width: 293px;
+    height: 65px;
+    position: absolute;
+    left: 674px;
+    top: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 1px black;
+}
+#go {
+    border: 2px solid black;
+    background-color: #205273;
+    margin: 1px;
+    padding: 1px;
+    position: relative;
+    top: -54px;
+    left: 198px;
+    width: 48px;
+    height: 35px;
+    border-radius: 10px;
+    color: white;
+    font-family: monospace;
+    padding-left: 1px;
+    text-align: center;
+}
+/*#searchbox{
+  background: yellow;
+  width: 160px;
+  height: 60px
+  position:relative;
+  left: 900px;
+  top: 40px;
+  display: inline-block;
+}*/
+nav {
+    display: block;
+    width: 900px;
+    background-color: #427ea9;
+    position: relative;
+    left: 48px;
+    top: -42px;
+    border-radius: 5px;
+    text-align: center;
+    margin: -5px;
+}
+nav ul li{
+  display: inline-block;
+  margin: 10px;
+}
+.linktag{
+  color: white;
+  text-decoration: none;
+  padding-right: 46px;
+  padding-left: 10px
+}
+.mainleftlistlink {
+    color: white;
+    text-align: center;
+    font-size: large;
+    text-decoration: underline;
+    font-weight: 100;
+    font-family: sans-serif;
+    width: 300px;
+}
+#history {
+    width: 667px;
+    clear: left;
+    display: inline-block;
+    position: relative;
+    top: -211px;
+    left: 272px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+h2 {
+    display: inline-block;
+    margin: 0px auto;
+    width: 300px;
+    height: auto;
+    vertical-align: top;
+    position: relative;
+    left: 458px;
+    text-align: center;
+    top: -210px;
+    color: #ebc756;
+    margin-bottom: 0px;
+}
+#unorderedlist{
+  text-align: center;
+  width: 200px;
+}
+#unorderedlist li {
+  list-style-type: none;
+}
+#bottomcontent{
+  background: white;
+  height: 350px;
+  border: 1px solid black;
+}
+#leftcontent{
+  display: inline-block;
+  width: 360px;
+  height: 300px;
+}
+#rightcontent{
+  display: inline-block;
+  width: 360px;
+  height: 300px;
+}
+.leftparagraph {
+  width: 298px;
+  padding: 36px;
+  border-top: 3px solid #70a8d1;
+  display: inline-block;
+  position: relative;
+  left: 111px;
+  top: -78px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+.rightparagraph{
+  width: 349px;
+  padding: 37px;
+  border-top: 3px solid #70a8d1;
+  display: inline-block;
+  position: relative;
+  top: -78px;
+  left: 134px;
+  text-align: center;
+  font-size: 18px
+}
+#lefttitle{
+  width: 380;
+  padding: 20px;
+  display: inline-block;
+  position: relative;
+  left: 133px;
+  top: -5px;
+}
+#righttitle{
+  width: 380;
+  padding: 20px;
+  display: inline-block;
+  position: relative;
+  left: 181px;
+  top: 0px;
+}
+.leftparagraph{
+  color: black;
+  width: 335px
+  font-size: large;
+  position: relative;
+  left: 40px
+  top -32px;
+  display: inline-block;
+}
+.rightlist{
+  width: 327px;
+  display: inline-block;
+  position: relative;
+  top: -134px;
+  left: 178px;
+  text-align: center;
+  color: #70a8d1;
+}
+.leftlist {
+    width: 286px;
+    display: inline-block;
+    position: relative;
+    top: -137px;
+    left: 122px;
+    text-align: center;
+    color: #70a8d1;
+}
+#footertop{
+display: inline;
+position: relative;
+top: 20px;
+left: 20px;
+}
+#footerbottom{
+  display: inline-block;
+  position: ;
+  top: 20px;
+  left: 20px;
+}
+footer div h3 {
+  color:#83b9e0;
+  margin-left: 30px;
+  display: inline-block;
+  text-align: center;
+  font-family: sans-serif;    position: relative;
+  top: 30px;
+  left: 149px;
+  font-weight: 300;
+}
+footer div p {
+  display: block;
+  color: #83b9e0;
+  text-align: center;
+  font-family: #83b9e0;
+  position: relative;
+  top: 3px;
+  left: -7px;
+  font-size: small;
+  font-family: sans-serif;
+}
+footer{
+background: #314755; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #314755 , #26a0da); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #314755 , #26a0da); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
