@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="utf-8">
-	     <link rel="stylesheet" type="text/css" href="style.css">
-       <title>internet</title>
-  </head>
-  <body>
-      <div id="wrapper">
-          <div id="header">
-              <img id="globe" src="./images/globe.png" alt="globe">
-              <p id="the_internet">The Inter<span>net</span></p>
-              <p id="world_wide_web">The World Wide Web</p>
-          </div><!--end of header-->
-          <div id="main_content">
-              <div id="left_column">
-                  <p id="left_sentence_1">So,what's an <span style="color:#de1f25">Internet?</span></p>
-                  <hr>
-                  <p id="left_sentence_2">An <span style="color:#1b6699">Inter</span>connected <span style="color:#1b6699">Net</span>work of computers all around the world!</p>
-                  <button id="watch_a_video">WATCH A VIDEO</button>
-                  <button id="more_resources">MORE RESOURCES</button>
-                  <img id="ad_background" src="./images/ad_background.png" alt="ad background">
-              </div>
-          </div><!--end of left_column-->
-              <div id="right_column">
-              </div><!--end of right_column-->
-          </div><!--end of main_content-->
-      </div><!--end of wrapper-->
-  </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GETTING STARTED WITH BRACKETS</title>
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <div id="header"> <img id="globe" src="images/globe.png" alt="globe">
+                <h1>The Inter<span id="net">net</span></h1>
+                <h2>The World Wide Web</h2> 
+            </div>
+            <div id="main_content">
+                <div id="left_column">
+                    <p>So,What's an <span id="internet_span">Internet?</span></p>
+                    <p>An <span class="inter_net">Inter</span>connected <span class="inter_net">Net</span>work of computers all around the world!</p>
+                    <button id="watch_a_video">WATCH A VIDEO</button>
+                    <button id="more_resources">MORE RESOURCES</button>
+                    <hr>
+                    <div id="ad_background_1">
+                        <h3>Reinvent your career in just 14 weeks</h3> <img id="ninja" src="ninja.png" alt="ninja">
+                        <button id="learn_more">Learn More<span id="one_carrot">></span><span id="two_carrot">>></span></button>
+                    </div>
+                </div>
+                <div id="right_column">
+                    <p id="time">Mon - Fri 9 a.m. - 5 p.m. (EST)</p> <img id="home" src="home.png" alt="home">
+                    <p id="dns">DNS</p> <img id="phone_pic" src="phone.png" alt="phone">
+                    <p id="phone_num">855.967.3787</p>
+                    <p id="international">International +1.617.963.0555</p>
+                    <hr id="main_line">
+                    <h3 id="clients">Clients and Servers</h3>
+                    <p class="computer">Computers connected to the <span class="web">Web</span> are colled <b>clients</b> and <b>servers</b>.</p>
+                    <ul>
+                        <li><span class="web">Clients</span>are the typical Web user's Internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and <span class="web">Web-accessing software</span>available on those devices (usually a web browser like Firefox or Chrome).</li>
+                        <li><span id="web">Server</span> are computers that store <span class="web">webpages</span>, or<span class="web">apps</span>. When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser.</li>
+                    </ul> <img id="client_server" src="client_server.jpg" alt="client server">
+                    <h3 id="so_what">So What Actually Happens?</h3>
+                    <ol id="use_list">
+                        <li>The browser goes to the <span class="web">DNS server</span> and finds the real address of the <span class="web">server</span> that the website lives on.</li>
+                        <li>The browser sends an <span class="web">HTTP request</span> message to the server asking it to send a copy of the website to the client.</li>
+                        <li>If the server approves the client's request, the server sends the client a <span class="web">"200 OK" message</span>, which means "Permission granted! Here you go!", and then starts sending the websites's files to the browser as a series of small chunks.</li>
+                        <li>The browser assembles the small chunks into a complete website and displays it to you!</li>
+                    </ol>
+                    <div id="box"> <img id="html" src="html.png" alt="html">
+                        <h1 id="the_big_3">The Big 3 - HTML, CSS, JavaScript</h1>
+                        <p id="last_one">While the server can process information in many different languages, the files that they serve to the client are always going to be some combination ofHTML,CSS, and JavaScript!</p>
+                        <p id="last_one">Learn more about the Big 3 <span class="web">here</span>!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fake Blog</title>
+		<meta name="blog" content="Michael Jordan blog.  This site is contains facts, personal bio, and other related info on Michael Jordan">
+	</head>
+	<body>
+		<h1>Michael Jordan Blog</h1>
+		<a href="http://www.grandespymes.com.ar/wp-content/uploads/2016/08/Michael-Jordan-FIBA-Raccoon-Knows.jpeg"></a>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet gravida nibh, vitae hendrerit metus. Donec in ultricies turpis. Integer egestas in risus quis semper. Suspendisse eget lacus magna. Proin at porttitor quam, vitae porttitor urna. Donec ut viverra dui, finibus consectetur ligula. Vivamus at velit et ipsum condimentum dignissim non vitae neque. Aliquam ut vulputate justo. Aliquam maximus eleifend pellentesque. Praesent viverra venenatis metus. Nullam eget massa dapibus, vestibulum velit eget, sodales risus. Duis ullamcorper fringilla scelerisque. Phasellus vitae consectetur quam. Duis eget massa a mi tempor viverra. Nam fermentum pellentesque blandit. Integer ut eleifend dolor.</p>
+
+		<table>
+			<thread>
+				<tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+				</tr>
+			</thread>
+			<tbody>
+				<tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+					<tr></tr>
+				</tr>
+			</tbody>
+		</table>
+		
+		<ul>
+			<li>1984 - 1993 Chicago Bulls</li>
+			<li>1995 - 1998 Chicago Bulls</li>
+			<li>2001 - 2003 Washington Wizards</li>
+		</ul>
+
+		<video width="400" height="200" poster="picture.jpg" controls>
+		    <source src="jordandunk.ogv">
+		    <source src="jordandunk.mp4">
+		</video>
+
+		<p>Please take this short survey</p>
+		<!--email-->
+		<label for="yes_emails">Email:</label>
+		<input type="text" id="email" name="email">
+		<!--do you want emails?-->
+		<label for="yes_emails">Yes, please send me lots of emails</label>
+		<input type="radio" id="yes_emails" name="yes_emails" value="yes_emails">
+
+		<label for="no_emails">No, please do not send me emails</label>
+		<input type="radio" id="no_emails" name="no_emails" value="no_emails">
+
+		<p>How did you hear about us?</p>
+		<label for="source">Facebook</label>
+		<input type="checkbox" id="facebook" name="facebook" value="facebook">
+
+		<label for="source">Newspaper</label>
+		<input type="checkbox" id="newspaper" name="newspaper" value="newspaper">
+
+		<label for="referral">Referral</label>
+		<input type="checkbox" id="referral" name="referral" value="referral">
+
+		<!-- this is the link for this project-->
+		<a href="http://s3.amazonaws.com/General_V88/boomyeah/company_209/chapter_3920/handouts/chapter3920_7844_fakeblog.png"></a>
+
+	</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
