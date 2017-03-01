@@ -1,0 +1,59 @@
+/**{
+margin: 0px;
+padding: 0px;
+outline: 1px dotted red;
+font-family: sans-serif;
+}*/
+#wrapper{
+  padding: 30px;
+  width: 1000px;
+  margin: 0px;
+}
+#header{
+  text-align: center;
+  margin-top: 10px;
+}
+#main{
+}
+#footer{
+}
+h2{
+  text-align: left;
+  font-size: 17px;
+}
+p{
+  text-align: left;
+  font-size: 13px;
+}
+th{
+  margin: 5px;
+}
+input{
+  margin: 3px;
+}
+table {
+  width: 600px;
+  border: 3px solid black;
+}
+th{
+  text-align: left;
+}
+h1{
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 50px;
+  border-bottom: 1px solid grey;
+}
+#form_box{
+  width: 300px;
+  text-align: right;
+  margin-top: 20px;
+}
+#btn{
+  width: 300px;
+  text-align: center;
+  margin-top: 20px;
+}
+button{
+  width: 150px;
+}
