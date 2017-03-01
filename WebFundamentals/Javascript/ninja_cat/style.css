@@ -1,0 +1,26 @@
+*{
+  margin-left: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+  font-family: sans-serif;
+}
+#wrapper{
+  width: 1000px;
+  padding: 20px;
+  margin-left: 0px auto;
+    background-color:forestgreen
+}
+#header{
+  text-align: center;
+    
+}
+#main{
+    padding-top: 100px;
+    background-color: black;
+    height: 400px
+}
+img{
+  display: block;
+  margin: 5px auto;
+    
+}

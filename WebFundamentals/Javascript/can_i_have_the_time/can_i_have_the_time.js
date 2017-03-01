@@ -1,20 +1,18 @@
-var hour = 8;
-var minute = 50;
-var period = "AM";
+// var hour = 8;
+// var minute = 50;
+// var period = "AM";
 
-if (hour < 10 && hour > 8) {
-  if (minute < 51 && hour > 30){
-    if (period === "AM"){
-      console.log("It's almost 9 in the morning");
-    } else {
-      console.log("It's 9 at night");
-    }
-  } else {
-    console.log("It's not close to 9 yet");
+function gotTime(hour, minute, period) {
+  if(minute > 30){
+    minute = "its almost";
+    hour +=1;
   }
-  console.log("It's time to go back to sleep");
-}
+  else (minute = "just after");
+  if (period == "AM"){
+    period = "in the morning";
+  }
+  else (period = "in the eveneing");
 
-var hour = 7;
-var minute = 15;
-var period = "PM";
+  console.log(minute, hour, period);
+}
+gotTime(6, 40, "PM");
