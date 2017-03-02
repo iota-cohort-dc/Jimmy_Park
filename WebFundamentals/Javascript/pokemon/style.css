@@ -1,0 +1,25 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+  font-family: sans-serif;
+}
+#wrapper{
+  padding: 20px;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+#header{
+  text-align:center;
+}
+#main{
+  width: 1000px;
+  margin: auto;
+}
+#foother{
+  height: 30px;
+}
+img{
+  width: 100px;
+}

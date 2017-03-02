@@ -1,0 +1,76 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+  font-family: sans-serif;
+}
+#wrapper{
+  padding: 20px;
+}
+#header{
+  text-align: left;
+}
+#name_header{
+  font-size: 30px;
+}
+#main{
+  width: 1000px;
+  /*background-color: green;*/
+  margin: auto;
+}
+#footer{
+  height: 30px;
+  /*background-color: yellow;*/
+}
+#left{
+  display: inline-block;
+  width: 400px;
+  /*background-color: blue;*/
+  vertical-align: top;
+}
+#right{
+  display: inline-block;
+  width: 500px;
+  height: auto;
+  margin-left: 50px;
+  /*background-color: purple;*/
+}
+#form_box{
+  /*text-align: right;*/
+  padding: 30px 30px 20px 10px;
+}
+input{
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+textarea{
+  width: 284px;
+  height: 100px;
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+p{
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+button{
+  padding: 5px 15px 5px 15px;
+  margin-left: 10px;
+  box-shadow: ;
+}
+#click_for_descrip{
+  text-align: center;
+}
+#id_card{
+  background-color: blue;
+  text-align: center;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+#poop{
+  margin-bottom: 15px;
+}
