@@ -1,0 +1,53 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 1px dotted red;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    padding: 20px;
+    width: 1000px;
+    margin: auto;
+    /*background-color: yellow;*/
+}
+
+.main {
+    padding: 50px;
+    text-align: center;
+    height: 700px;
+    border-radius: 10px;
+    background: #DE6262;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #DE6262, #FFB88C);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #DE6262, #FFB88C);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.city_box,.temp_box{
+  text-align: left;
+  margin-top: 10px;
+}
+
+input {
+    width: 150px;
+    height: 25px;
+}
+.search{
+  border-radius: 5px;
+  height: 25px;
+}
+.button{
+  border-radius: 5px;
+  height: 25px;
+}
+.button:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+.city_box {
+    font-size: 100px;
+}
