@@ -8,3 +8,12 @@ def get_matching_words(regex):
  	if re.search(regex,word):
  		matches.append(word)
  return matches
+# print get_matching_words("v")
+# print get_matching_words("ss")
+# print get_matching_words("e$")
+# print get_matching_words("b")
+# print get_matching_words("b\wb")
+# print get_matching_words("b.b")
+# print get_matching_words("b\wb")
+print get_matching_words("b")
+# print get_matching_words("b")

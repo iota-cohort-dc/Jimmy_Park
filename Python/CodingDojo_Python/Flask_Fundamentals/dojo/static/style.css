@@ -1,0 +1,30 @@
+div{
+  background-color: purple;
+}
+h1 {
+  color: green;
+  font-size: 50px;
+}
+#form_box{
+  width: 300px;
+  text-align: right;
+  margin-top: 20px;
+}
+#btn{
+  width: 300px;
+  text-align: center;
+  margin-top: 20px;
+}
+button{
+  width: 150px;
+}
+input{
+  margin: 3px;
+}
+table {
+  width: 600px;
+  border: 3px solid black;
+}
+th{
+  text-align: left;
+}
