@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <title>Dojo Survey </title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+      <h1>Dojo Survey</h1>
+              <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/results' method='post'>
+          Your Name: <input type='text' name='name'>
+          Dojo Location: <select type='text' name='location'>
+              <option value="new york">New York</option>
+              <option value="washington dc">Washington DC</option>
+              <option value="philadelphia">Philadelphia</option>
+              <option value="boston">Boston</option>
+          </select>
+          Favorite Language: <select type='text' name='language'>
+              <option value="python">Python</option>
+              <option value="ruby">Ruby</option>
+              <option value="javacript">JavaScript</option>
+              <option value="html">HTML</option>
+          </select>
+          <p>Comment (optional):</p>
+          <input type="textarea" name= "description"></input><br>
+          <input type='submit' value='Button'>
+      </form>
+
+    </body>
+</html>
