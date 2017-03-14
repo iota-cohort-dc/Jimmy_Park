@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <!-- <form>
+      <input type="text" name="" value="{{ gold }}">
+    </form> -->
+    <h1>Total Gold:{{ session['gold']}}</h1>
+    <h1>Farm</h1>
+    <p>(earns 10-20 golds)</p>
+    <form action="/process" method="post">
+        <input type="hidden" name="building" value="farm">
+        <input type="submit" value="Find Gold!">
+    </form>
+    <h1>Cave</h1>
+    <p>(earns 5-10 golds)</p>
+    <form action="/process" method="post">
+        <input type="hidden" name="building" value="cave">
+        <input type="submit" value="Find Gold!">
+    </form>
+    <h1>House</h1>
+    <p>(earns 2-5 golds)</p>
+    <form action="/process" method="post">
+        <input type="hidden" name="building" value="house">
+        <input type="submit" value="Find Gold!">
+    </form>
+    <h1>Casino</h1>
+    <p>(earns/takes 0-50 golds)</p>
+    <form action="/process" method="post">
+        <input type="hidden" name="building" value="casino">
+        <input type="submit" value="Find Gold!">
+    </form>
+
+    <h1>Reset</h1>
+    <a href="/reset">Give back your Gold (reset)</a>
+
+    <div>
+        <h3>Activities</h3>
+        <div>
+            {% for randmVarNameHere in session['activity'] %}
+            <p>{{ randmVarNameHere }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
