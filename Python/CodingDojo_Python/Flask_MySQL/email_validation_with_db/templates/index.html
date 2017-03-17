@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Email Validation with DB</title>
+    <link rel="stylesheet" href="/style.css">
+
+    </script>
+</head>
+
+<body>
+    <h1>Please Enter Information</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% if "email" in session%}
+    <p>{{session['email']}}</p>
+    {% endif %}
+
+    <form action='/submit' method='post'>
+        Email Address:<input type="email" name="email" placeholder="Email">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

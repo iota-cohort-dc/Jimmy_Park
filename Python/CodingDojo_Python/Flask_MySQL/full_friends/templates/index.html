@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Full Friends</title>
+
+
+</head>
+
+<body>
+    <h1>This is what is coming through from the server</h1>
+    <!-- {{showfriends}} -->
+
+    <ul>
+        {% for friend in friends %}
+        <li>{{ friend['first_name']}} {{ friend['last_name']}} {{ friend['email']}}</li>
+
+        <a href="/friends/{{friend['id']}}/edit"><button type="button" name="Edit!">Edit!</button></a>
+        <!-- anchor is a GET method by default -->
+
+        <form action="/friends/{{friend['id']}}/delete" method="Post">
+          <input type="submit" value="Delete!">
+        </form>
+
+    {% endfor %}
+    </ul>
+
+    <h1>Create a friend</h1>
+    <form action="/friends" method="Post">
+        <p>FN:<input type="text" name="first_name"></p>
+        <p>LN:<input type="text" name="last_name"></p>
+        <p>EMAIL:<input type="text" name="email"></p>
+        <p><input type="submit" value="Go!"></p>
+
+    </form>
+
+</body>
+
+</html>

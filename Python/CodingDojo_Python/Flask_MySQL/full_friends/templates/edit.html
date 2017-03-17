@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit Friend</title>
+        <link rel="stylesheet" href="/style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="/script.js"></script>
+
+    </head>
+    <body>
+        {{friend}}
+        <p>
+        <h3>Current User that's being edited</h3>
+          {{person[0]['first_name']}}
+          {{person[0]['last_name']}}
+          {{person[0]['email']}}
+        </p>
+
+        <form action="/friends/{{friend[0]['id']}}/edit" method="Post">
+
+          <input type="text" name="first_name" placeholder="{{person[0]['first_name']}}" value="{{person[0]['first_name']}}">
+
+          <input type="text" name="last_name" placeholder="{{person[0]['last_name']}}" value="{{person[0]['last_name']}}">
+
+          <input type="text" name="email" placeholder="{{person[0]['email']}}" value="{{person[0]['email']}}">
+
+          <input type="submit" value="Go!">
+        </form>
+    </body>
+</html>
