@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Wall</title>
+  </head>
+  <body>
+
+      <h1>Add to the wall, {{ user['first_name'] }}</h1>
+      <a href="/logout">Logout</a>
+      <ul>
+          {% for messages in wall_messages %}
+          <li>
+              {{message.message}} - {{message.first_name}} {{message.last_name}}
+              <ul>
+                  <form action="/addComment" method="Post">
+                      <input type="hidden" name="message_id" value="{{message.message_id}}">
+                      <input type="text" name="comment">
+                      <input type="submit" name="Add Comment">
+                  </form>
+              {% for comment in wall_comments %}
+              {% if message.message.id == comment.message_id %}
+              <li>{{comment.comment}} - {{comment.first_name}} {{comment.last_name}}</li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+
+          {% endfor %}
+      </ul>
+      <form action="/addMessage" method="Post">
+        <input type="text" name="message">
+        <input type="submit" value="addMessage">
+      </form>
+  </body>
+</html>
