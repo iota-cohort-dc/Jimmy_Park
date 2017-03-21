@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <h1>Random Word </h1>
+      <!-- <form action="/generate" method="GET"> -->
+      <p>{{ request.session.new_word }}</p>
+      <p>count {{ request.session.count }}</p>
+         <a href="/generate"><button type="button" name="button">Generate</button></a>
+      <!-- </form> -->
+
+  </body>
+</html>

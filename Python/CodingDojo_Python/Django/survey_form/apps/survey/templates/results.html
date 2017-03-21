@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results Page</title>
+  </head>
+  <body>
+    <h1>Thanks for submitting this form!  You have submitted this form {{request.session.count}} times now.</h1>
+    <h1>Submitted Information</h1>
+    <p>Your Name:         {{request.session.name}}</p>
+    <p>Dojo Location:     {{request.session.location}}</p>
+    <p>Favorite Language: {{request.session.favLang}}</p>
+    <p>Comment (option):  {{request.session.comment}}</p>
+    <a href="/"><input type="button" name="" value="Go Back">
+
+  </body>
+</html>
