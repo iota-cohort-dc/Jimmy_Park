@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Disappearing Ninjas</title>
+</head>
+
+<body>
+    <h1>Ninja</h1>
+        <p>
+            {{displayAll}}
+        </p>
+
+            {% load static from staticfiles %}
+                {% if displayAll == True %}
+                    <img src="{% static "images/tmnt.png" %}">
+                {% endif %}
+
+            {% load static from staticfiles %}
+                {% if color == "blue" %}
+                    <img src="{% static "images/leonardo.jpg" %}">
+                {% elif color == "red" %}
+                    <img src="{% static "images/raphael.jpg" %}">
+                {% elif color == "orange" %}
+                    <img src="{% static "images/michelangelo.jpg" %}">
+                {% elif color == "purple" %}
+                    <img src="{% static "images/donatello.jpg" %}">
+                {% elif color != 'color' %}
+                    <img src="{% static "images/notapril.jpg" %}">
+                {%endif%}
+
+
+</body>
+</html>
