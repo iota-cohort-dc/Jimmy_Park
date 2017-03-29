@@ -7,17 +7,21 @@
   <body>
 
       <h1>Are you sure you want to delete the following courses?</h1>
-      <p>Name: {{ remv.name }}</p>
-      <p>Description: {{ remv.description }}</p>
-      <form action="/revert" method="post"> <p>
+      <p>Name: {{ user.name }}</p>
+      <p>Description: {{ user.description }}</p>
+      <p>this is a commment...this was /revert in the form action="" </p>
+
+      <form action="{% url 'courses:index' %}" method="get"> <p>
           {% csrf_token %}
           <input type="submit" name="revert" value="No">
       </form>
-          {% csrf_token %}
-      <form action="/destroy/{{ remv.id }}" method="post">
+
+      <form action="{% url 'courses:destroy' user.id %}" method="post">
         {% csrf_token %}
           <input type="submit" name="yes" value="Yes! I want to delete this">
       </form>
+
+      <a href="/">Home Page</a>
 
   </body>
 </html>

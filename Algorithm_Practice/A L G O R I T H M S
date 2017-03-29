@@ -1,0 +1,26 @@
+// A L G O R I T H M S
+//
+// pg 66 SList: Remove Negatives
+// Given a pointer to the head node of the singly linked list, remove any nodes containing negative values and return the new list.
+
+function ListNode (){
+  this.val = value;
+  this.next = null;
+}
+this.removeNegatives = function SLL (){
+  this.head = null;
+  var current = this.head;
+  var temp = null;
+  if ( !this.head ){
+    return false;
+  }
+  while( current.next != null){}
+    if ( current.val > 0 ){
+      current = current.next;
+    }
+    else; {
+    temp = current.next;
+    temp.next = current.next.next;
+    }
+  }
+}

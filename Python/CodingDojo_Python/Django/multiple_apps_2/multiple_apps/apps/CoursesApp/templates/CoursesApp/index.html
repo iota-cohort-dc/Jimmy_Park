@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Courses</title>
+  </head>
+  <body>
+    <div style="width: 800px; margin: auto;">
+      <h1>This is the courses app.test</h1>
+
+      <form action="create" method="post">
+        {% csrf_token %}
+          <p>Course Name:<input type="text" name="name"></p>
+          <p>Description: <textarea name="description" rows="8" cols="80"placeholder="Description"></textarea></p>
+          <input type="submit" value="Enter Course">
+      </form>
+
+      <table >
+          <tr>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+              {% for item in courses %}
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.created_at }}</td>
+            <td>{{ item.updated_at }}</td>
+            <td><a href="{% url 'courses:remove' item.id %}">Remove</td>
+          </tr>
+          {% endfor %}
+            <p><a href="{% url 'login:logout' %}">LOGOUT</a></p>
+      </table>
+      <form action="{% url 'courses:choose' %}" method="Post">
+        {% csrf_token %}
+         <input type="submit" value="addCourse">
+      </form>
+    </div>
+  </body>
+</html>
