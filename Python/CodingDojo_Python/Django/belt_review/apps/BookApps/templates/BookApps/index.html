@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books Home Main Page</title>
+  </head>
+  <body>
+
+    <h2>Welcome back, this is html in  BookApps</h2>
+    <h2>Recent Book Reviews</h2>
+
+    <p>replace this line with book title w/ link </p>
+    <p>with star ratings</p>
+    <p>aslo with link to the user with  a quote or comment</p>
+    <p>also Posted: on date with month / date / year</p>
+
+    <p> a href this tag going to add book and review</p>
+
+    <a href="{% url 'books:addbook' %}">Add Book and Review</a><br>
+    <a href="{% url 'login:logout' %}">Logout</a>
+
+    <h2>Other Books with Reviews:</h2>
+    <nav>
+      <ul style="height:100px; width:18%;overflow:hidden; overflow-y:scroll;border: 1px solid black;">
+        <li>Link 1</li>
+        <li>Link 2</li>
+        <li>Link 3</li>
+        <li>Link 4</li>
+        <li>Link 5</li>
+        <li>Link 6</li>
+      </ul>
+    </nav>
+
+  </body>
+</html>

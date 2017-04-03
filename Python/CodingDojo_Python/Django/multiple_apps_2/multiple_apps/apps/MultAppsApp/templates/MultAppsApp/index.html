@@ -18,11 +18,11 @@
 
     <form action="/r_process" method="post">
         {% csrf_token %}
-        <p>First Name: <input type="text" name="first" value=""></p>
-        <p>Last Name: <input type="text" name="last" value=""></p>
-        <p>Email: <input type="text" name="email" value=""></p>
-        <p>Password: <input type="password" name="pass" value=""></p>
-        <p>Confirm Password: <input type="password" name="c_pass" value=""></p>
+        <p>First Name: <input type="text" name="first" value="" required></p> <br>
+        <p>Last Name: <input type="text" name="last" value="" required></p> <br>
+        <p>Email: <input type="text" name="email" value="" required></p> <br>
+        <p>Password: <input type="password" name="pass" value="" required></p> <br>
+        <p>Confirm Password: <input type="password" name="c_pass" value="" required></p> <br>
         <p><input type="submit" name="" value="Register"></p>
     </form>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Semi Restfull Routes App</title>
+  </head>
+  <body>
+     <div class="">
+        <h1>Welcome to Semi-Restfull Routes Shopping Page</h1>
+        <p>Get the latest querky gadgest</p>
+        <h4>Please Register</h4>
+            <form class="" action="{% url '' %}" method="post">
+                <p>First Name: <input type="text" name="" value="first_name" required></p>
+                <p>Last Name: <input type="text" name="" value="last_name" required></p>
+                <p>Email: <input type="text" name="" value="email" required></p>
+                <p>Password: <input type="text" name="" value="pass" required></p>
+                <p>Confirm Password: <input type="text" name="" value="c_pass" required></p>
+                <p><input type="submit" value="Register"></p>
+            </form>
+            <form class="" action="{% url '' %}" method="post">
+                <p>Email: <input type="text" value="email"></p>
+                <p>Password: <input type="text" value="pass"></p>
+                <p><input type="submit" name="" value="Login"></p>
+            </form>
+            <form class="" action="{% url '' %}" method="post">
+                <p>Logout: </p>
+
+            </form>
+        <h4>Please Login</h4>
+     </div>
+  </body>
+</html>

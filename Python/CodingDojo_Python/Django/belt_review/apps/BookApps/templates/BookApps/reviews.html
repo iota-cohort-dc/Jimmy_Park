@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book Reviews Page</title>
+  </head>
+  <body>
+    <p>Book Reviews Page</p>
+    <p>Add Home link here:</p>
+    <p>LOGOUT link here</p>
+
+    <h2>Reviews:</h2>
+    <p>jinja some books</p>
+    <p>jinja some ratings</p>
+    <p>jinja some user with link</p>
+    <p>add comments to the reviews</p>
+    <p>add posted date</p>
+    <p>--------------------</p>
+    <p>add delete button</p>
+
+    <form class="" action="/userpage" method="post">
+        {% csrf_token %}
+      <p>Add a Review:</p>
+      <textarea name="text" rows="8" cols="80" required></textarea>
+      <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <input type="submit" name="" value="Submit Review">
+      </select>
+    </form>
+
+  </body>
+</html>

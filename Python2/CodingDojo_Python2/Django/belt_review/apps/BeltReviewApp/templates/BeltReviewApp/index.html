@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Login and Registration</title>
+</head>
+<body>
+  <h1 style="background-color: green; text-align: center;">{{success}}</h1>
+  <h2 style="text-align: center; margin-top: 50px;">Register</h2>
+
+  {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form style="margin-left: 600px; width: 390px;" action='/register' method='POST'>
+    {% csrf_token %}
+    <p>Name:<input style="float: right" type="text" name="name" id="name" required></p>
+    <p>Username:<input style="float: right" type="text" name="user_name" id="user_name" required></p>
+    <p>Email:<input style="float: right" type="email" name="email" id="email" required></p>
+    <p>Password:<input style="float: right" type="password" name="password" id="password" required></p>
+    <p>Password Confirmation:<input style="float: right" type="password" name="passconfirm" id="passconfirm" required></p>
+    <p><input type="submit" value="Register"></p>
+  </form>
+
+  <hr>
+  <h2 style="text-align: center;">Login</h2>
+  <h2 style="background-color: red; text-align: center;">{{error}}</h2>
+  <h2 style="background-color: red; text-align: center;">{{pass}}</h2>
+
+  <form style="margin-left: 600px; width: 390px;" action="login" method='POST'>
+    {% csrf_token %}
+    <p>Email: <input style="float: right;" type="text" name="email" id="email" required></p>
+    <p>Password:<input style="float: right" type="password" name="password" id="password" required></p>
+    <p><input type="submit" value="Login"></p>
+  </form>
+
+</body>
+</html>
