@@ -41,3 +41,17 @@ def listCompare(a,b):
         print "The two list don't match"
 
 listCompare(list_one,list_two)
+#
+
+# list_one = ['celery','carrots','bread','milk']
+# list_two = ['celery','carrots','bread','milk']
+#
+# def listCompare(a,b):
+#     i = 0
+#     if i in a == i in b:
+#         print "The two list match"
+#         i = i + 1
+#     else:
+#         print "The two list don't match"
+#         i = i + 1
+# listCompare(list_one,list_two)

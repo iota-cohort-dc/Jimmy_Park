@@ -1,5 +1,6 @@
-// #1  Print 1-255
-//       Print all the integers from 1 to 255
+
+
+//<----------------------- Print 1-255 (arrays) ---------------------------->
 
 function  integers () {
 	var arr = [];
@@ -14,10 +15,7 @@ function integers () {
 	console.log( i );
 }
 
-
-
-// #2  Odds 1-255
-//       Print all odd integers from 1 to 255
+//<-------------------------- Odds 1-255 (arrays) --------------------------->
 
 function odds () {
 	var arr = [];
@@ -35,10 +33,7 @@ function off () {
 	}
 }
 
-
-
-// #3  Print Sum 0-255
-//       Print integers from 0 to 255, and the sum so far
+//<------------------------- Print Sum 0-255 (arrays) ----------------------->
 
 function sumAll () {
 	var sum = 0;
@@ -48,9 +43,7 @@ function sumAll () {
 	return sum;
 }
 
-
-
-// #4  Iterate Array
+//<------------------------- Iterate Array (arrays) -------------------------->
 //       Print all values in a given array.
 
 function iterateArr (arr) {
@@ -66,8 +59,7 @@ function iterArr (arr) {
 	return sum:
 }
 
-
-// #5  Find Max
+//<--------------------------- Find Max (arrays) ---------------------------->
 //       Print the largest element in a given array
 
 function maxMinAvg (arr) {
@@ -89,9 +81,8 @@ function maxMinAvg (arr) {
 	return arrNew;
 }
 
-
-// #6  Get average
-//       Analyze an array’s values and print the average
+//<------------------------- Get average (arrays)----------------------------->
+//  Analyze an array’s values and print the average
 
 function getAvg (arr) {
 	var sum = 0;
@@ -102,8 +93,7 @@ function getAvg (arr) {
 	return avg;
 }
 
-
-// #7  Array with odds
+//<------------------------ Array with odds (arrays) ------------------------>
 //       Create an array with odd integers from 1 - 255
 
 function arrOdds () {
@@ -115,8 +105,7 @@ function arrOdds () {
 	return arr;
 }
 
-
-// #8  Square the Values
+//<--------------------- Square the Values (arrays) ------------------------->
 //       Given an array, square each value in the array
 
 function square (arr) {
@@ -127,8 +116,7 @@ function square (arr) {
 	return arr;
 }
 
-
-// #9  Greater than Y
+//<----------------------- Greater than Y (arrays)---------------------------->
 //       Count the number of array values greater than a given Y
 
 function greaterY (arr, Y) {
@@ -141,8 +129,8 @@ function greaterY (arr, Y) {
 }
 
 
-// #10  Zero out negative numbers
-//         Set negative array values to zero
+//<---------------------- Zero out negative numbers (arrays)------------------>
+//     Set negative array values to zero
 
 function negative (arr) {
 	var temp = 0;
@@ -153,8 +141,7 @@ function negative (arr) {
 	return arr;
 }
 
-
-// #11  Max, Min, Average
+//<----------------------- Max, Min, Average (arrays)------------------------>
 //         Given an array, print max, min, and average values
 
 function maxMinAvg (arr) {
@@ -173,8 +160,7 @@ function maxMinAvg (arr) {
 	return arrNew;
 }
 
-
-// #12  Shift array values
+//<----------------------- Shift array values (arrays)------------------------>
 //         Given an array, shift all values forward, dropping the first value and leaving an extra ‘0’ value at the end
 
 function shiftArr (arr) {
@@ -185,8 +171,7 @@ function shiftArr (arr) {
 	return arr;
 }
 
-
-// #13  Number to string
+//<------------------------- Number to string (arrays)------------------------>
 //         Replace any negative values in an array with ‘Dojo’
 
 function numString (arr) {
@@ -197,8 +182,84 @@ function numString (arr) {
 	return arr;
 }
 
+//<-------------------------- count non-spaces ------------------------------>
+function countNonSpaces (arr){
+	count = 0
+	for (var i = 0; i < str.length; i++){
+		if (arr[i] != ""){
+			count += 1;
+		}
+	}
+}
 
-// pg 51  Remove Blanks
+//<---------------------------- string reverse ------------------------------>
+function strReverse (str){
+	temp = 0;
+	arr = str.split("");
+	for (var i = 0; i < arr.length/2; i++){
+		temp = arr[i];
+		arr[i] = arr[(arr.length - 1) - i];
+		arr[(arr.length - 1) - i] = temp;
+	}
+	arr = arr.join;
+	return arr;
+}
+
+//<------------------------------ braces valid ----------------------------->
+//  ex ([{}[]{}])
+
+
+//<-------------------------- zipIt (arrays) (marcos)------------------------>
+function zipIt (arr1, arr2){
+	var newArr = []
+	i = 0
+	yep = true
+	while (yep){
+		yep = false;
+		if (i < arr1.length){
+			newArr[newArr.length] = arr1[i];
+			yep = true;
+		}
+		if (i < arr2.length){
+			newArr[newArr.length] = arr2[i];
+			yep = true;
+		}
+		i++;
+	}
+	return newArr;
+}
+
+//<------------------- remove Blanks from string (arrays) ------------------->
+function removeBlanks(str){
+	var newArr = []
+	for(var i = 0; i < str.length; i++){
+		if(str[i] != " "){
+			newArr[newArr.length] = str[i];
+		}
+	}
+	return newArr.join("");
+}
+removeBlanks(['as','fd','rty','hjm','dbf','c','bnn'])
+
+// acronyms
+
+//<--------- Remove Negatives in a given array (arrays) tested good --------->
+
+function removeDuplicates (arr){
+  var newArr = []
+  var x = 0
+  for (var i = 0; i < arr.length; i++){
+    if(arr[i] != arr[i + 1]){
+      newArr[x] = arr[i];
+      x++;
+    }
+  }
+  return newArr;
+}
+removeDuplicates([1,2,2,3,4,5,5,6,7])
+
+//<---------------- pg 51  Remove Blanks (arrays)---------------------------->
+
 function rmvBlanks(str){
     var newString = "";
     for (var i = -; str.length; i++){
@@ -210,7 +271,7 @@ function rmvBlanks(str){
 }
 rmvBlanks("P ass ion nev er fa ails");
 
-// pg 66 SList: Remove Negatives
+//<--------------- pg 66 SList: Remove Negatives (linked lists)--------------->
 // Given a pointer to the head node of the singly linked list, remove any nodes containing negative values and return the new list.
 
 function ListNode (){
@@ -236,7 +297,8 @@ this.removeNegatives = function SLL (){
 }
 
 
-// page 63 SList: split on Value
+//<----------------- page 63 SList: split on Value----------------------->
+
 function ListNode () {
 	this.val = value;
 	this.next = null;
@@ -281,40 +343,53 @@ list.addFront(1)
 list.addFront(22)
 console.log(list.SplitOnVal(4));
 
+//<------------------------- deck of cards -------------------------->
 
+function DeckConstructor(){
+    var suits = ["Hearts", "Spades", "Clubs", "Diamonds"];
+    var values = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+    var deck = [];
 
+    this.showDeck = function(){
+        console.log(deck);
+        console.log("Length:", deck.length);
+    }
+    var generateDeck = function(){
+        deck = [];
+        for (var i=0; i < suits.length; i++){
+            for (var j=0; j<values.length; j++){
+                var card = {};
+                card.suit = suits[i];
+                card.value = values[j];
+                deck.push(card);
+            }
+        }
+        return this;
+    }
+    generateDeck();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
+    this.shuffle = function(){
+        var numberOfShuffles = Math.floor((Math.random() * 100 ) + 50);
+        for (var i = 0; i <= numberOfShuffles; i++){
+            var randomInteger1 = Math.floor(Math.random() * deck.length);
+            var randomInteger2 = Math.floor(Math.random() * deck.length);
+            var temp = deck[randomInteger1];
+            deck[randomInteger1] = deck[randomInteger2];
+            deck[randomInteger2] = temp;
+        }
+        return this;
+    }
+    this.reset = generateDeck;
+    this.deal = function(){
+        return deck.pop();
+    }
+}
+function PlayerConstructor(name){
+    this.name = name;
+    this.hand = [];
+}
+PlayerConstructor.prototype.takeCard = function(deck){
+    var card = deck.deal();
+    this.hand.push(card);
+    return this;
+}
