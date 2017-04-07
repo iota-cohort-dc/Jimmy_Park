@@ -205,10 +205,6 @@ function strReverse (str){
 	return arr;
 }
 
-//<------------------------------ braces valid ----------------------------->
-//  ex ([{}[]{}])
-
-
 //<-------------------------- zipIt (arrays) (marcos)------------------------>
 function zipIt (arr1, arr2){
 	var newArr = []
@@ -271,6 +267,85 @@ function rmvBlanks(str){
 }
 rmvBlanks("P ass ion nev er fa ails");
 
+//<------------------------------ braces valid ----------------------------->
+//  ex ([{}[]{}])
+
+function bracesValid(str) {
+    var arr = [];
+    for(var i = 0; i < str.length; i++) {
+        if(str[i] == "{" || str[i] == "[" || str[i] == "(") {
+            arr.push(str[i]);
+        }
+        else if(str[i] == "}" || str[i] == "]" || str[i] == ")") {
+            if(str[i] == "}") {
+                if(arr[arr.lenth-1] != "{") {
+                    return false;
+                }
+                else {
+                    arr.pop();
+                }
+            }
+            else if(str[i] == "]") {
+                if(arr[arr.lenth-1] != "[") {
+                    return false;
+                }
+                else {
+                    arr.pop();
+                }
+            }
+            else if(str[i] == ")") {
+                if(arr[arr.lenth-1] != "(") {
+                    return false;
+                }
+                else {
+                    arr.pop();
+                }
+            }
+        }
+    }
+    if(arr == []) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+//<------------------------------ isPalindrone ------------------------------->
+
+// ex racecar
+function is Palindrone(str){
+	for (var i = 0; i < strength/2; i++){
+		if (str[i] != str[str.length -1] - i){
+			return false;
+		}
+	}
+}
+
+//<------------------------------ Drop the mike ------------------------------>
+// create a standalone function that accepts an input string, removes leading and trailing white space (at beginning and end only), capitlalize the first letter of every word, and returns that string. if original string contains the word "mike" anywhere, immediately return "stunned silence" instead.
+
+function dropMike(str){
+	arr = []
+	str = str.split("");
+	for (var i = 0; i < str.length; i++){
+		if (str[i] == "mike" || str[i] == "Mike"){
+			return "stunned silence";
+		}
+	}
+	for (for i = 0; i < str.length; i ++){
+		if (str[i] != ""){
+			arr.push(str[i]);
+		}
+	}
+	for (var i = 0; i < arr.length; i++){
+		arr[i] = arr [i].split("");
+		arr[i][0] = arr[i][0].toUpperCase();
+		arr[i] = arr[i].join("");
+	}
+	return arr.join("");
+}
+
 //<--------------- pg 66 SList: Remove Negatives (linked lists)--------------->
 // Given a pointer to the head node of the singly linked list, remove any nodes containing negative values and return the new list.
 
@@ -295,7 +370,6 @@ this.removeNegatives = function SLL (){
     }
   }
 }
-
 
 //<----------------- page 63 SList: split on Value----------------------->
 

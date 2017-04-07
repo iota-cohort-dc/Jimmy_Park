@@ -1,0 +1,18 @@
+body {
+  background-color: #21E88D;
+}
+#main{
+  width:400;
+  height: auto;
+  border: 3 px solid black;
+  background-color:#2DD5E8;
+  padding: 20px;
+}
+#results{
+  background: #1E90D1;
+  width:300px;
+  height: auto;
+  border: 3px solid black;
+  padding-left: 20px;
+
+}

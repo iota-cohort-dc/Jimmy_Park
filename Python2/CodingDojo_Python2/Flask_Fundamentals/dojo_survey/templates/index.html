@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey Homepage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+  </head>
+  <body>
+      <div id="wrapper">
+        <div id="main">
+          <h4></h4>
+          <form action="/result" method="post">
+            <p>Name: <input type="text" name="name" value=""></p>
+            <p>Dojo Location: <select class="" name="location">
+                                  <option name="washington" value="">washington</option>
+                                  <option name="seatle" value="">seatle</option>
+                                  <option name="venicebeach" value="">venicebeach</option>
+                                  <option name="palmbeach" value="">palmbeach</option>
+                                  <option name="maui" value="">maui</option>
+                                  <option name="aspen" value="">aspen</option>
+                              </select></p>
+            <p>Favorite Language: <select class="" name="favLang">
+                                  <option value="Python">Python</option>
+                                  <option value="Ruby">Ruby</option>
+                                  <option value="Javascript">Javascript</option>
+                                  <option value="jQuery">jQuery</option>
+                                  <option value="django">django</option>
+                                  <option value="Flask">Flask</option>
+                                  <option value="mySQL">mySQL</option>
+                                  <option value="node.js">node.js</option>
+                                  <option value="Angular.js">Angular.js</option>
+                                  <option value="MongoDB">MongoDB</option>
+                              </select></p>
+            <p><textarea name="comment" rows="8" cols="80" placeholder="optional"></textarea></p>
+            <p><input type="submit" name="" value="Submit"></p>
+
+          </form>
+        </div>
+      </div>
+  </body>
+</html>
