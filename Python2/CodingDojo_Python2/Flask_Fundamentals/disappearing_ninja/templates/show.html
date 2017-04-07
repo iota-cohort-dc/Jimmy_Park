@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disappearing Ninja According to Color</title>
+  </head>
+  <body>
+
+    <p>{{flag}}</p>
+    {% if flag == True %}
+      <img src="{{ url_for("static", filename="images/tmnt.png")}}">
+    {% endif %}
+
+    {% if flag == False %}
+
+      {% if turtle == "blue" %}
+        <img src="{{ url_for("static", filename="images/leonardo.png")}}">
+
+      {% elif turtle == "red" %}
+        <img src="{{ url_for("static", filename="images/raphael.png")}}">
+
+      {% elif turle == "orange" %}
+        <img src="{{ url_for("static", filename="images/michelangelo.png")}}">
+
+      {% elif turtle == "purple" %}
+        <img src="{{ url_for("static", filename="images/donatello.png")}}" alt="">
+
+      {% else %}
+        <img src="{{ url_for("static", filename="images/nonapril.png")}}" alt="">
+      {% endif %}
+
+    {% endif %}
+  </body>
+</html>

@@ -8,12 +8,14 @@
     </head>
     <body>
         <h1>Hello this is Counter</h1>
+
         <h3>Current count: {{ session['counter']}}</h3>
+
         <form action='/count' method='post'>
             <input type="submit" value="GO!">
-        </form action='/reset' method='post'>
-            <input type="submit" value="GO!"
-        <form>
         </form>
+        
+        <a href="/reset">reset</a>
+
     </body>
 </html>

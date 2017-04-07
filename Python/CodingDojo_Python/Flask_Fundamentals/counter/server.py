@@ -5,7 +5,7 @@ app.secret_key = "burrito"
 @app.route('/') # url from browser matches to this route
 def index(): # define method function to apply logic to route
 
-    print session # inspecting session variable
+    # print session # inspecting session variable
     if "counter" in session: # is the counter key in the session dictionary
         # if it is, plus one to it
         session['counter'] += 1
@@ -22,9 +22,9 @@ def counter():
 
     return redirect('/')
 
-@app.route('/reset', methods=["POST"])
+@app.route('/reset')
 def reset():
 
     session['counter'] = 0
-
+    return redirect('/')
 app.run(debug=True) # run our server
