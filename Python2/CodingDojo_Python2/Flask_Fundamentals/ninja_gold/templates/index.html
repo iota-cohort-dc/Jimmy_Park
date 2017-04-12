@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <div class="wrapper">
+
+        <h1>Total Gold: session['gold'] </h1>
+
+        <h3>Farm</h3>
+        <p>(earns 10-20 gold)</p>
+        <form class="" action="index.html" method="post">
+          <input type="hidden" name="building" value="farm">
+          <input type="submit" value="Find Gold!">
+        </form>
+
+        <h3>Cave</h3>
+        <p>(earns 5-10 gold)</p>
+        <form class="" action="index.html" method="post">
+          <input type="hidden" name="building" value="cave">
+          <input type="submit" value="Find Gold!">
+        </form>
+
+        <h3>House</h3>
+        <p>(earns 2-5 gold)</p>
+        <form class="" action="index.html" method="post">
+          <input type="hidden" name="building" value="house">
+          <input type="submit" value="Find Gold!">
+        </form>
+
+        <h3>Casino</h3>
+        <p>(earns/take 0-50 gold)</p>
+        <form class="" action="index.html" method="post">
+          <input type="hidden" name="building" value="casino">
+          <input type="submit" value="Find Gold!">
+        </form>
+
+        <div class="activities">
+            { for }
+          <p> { } </p>
+            { endfor }
+
+        </div>
+
+      </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Advanced Validation Example</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+      <h1>Please Enter Information</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <div class="myform">
+          <form action ="submit" method="POST">
+                Email: <input type="email" name="email" placeholder="Email"> <br><br>
+                First Name: <input type="text" name="first_name" placeholder="First Name"> <br><br>
+                Last Name: <input type="text" name="last_name" placeholder="Last Name"> <br><br>
+                Password: <input type="password" name="password" placeholder="Password" required> <br><br>
+                Confirm Password: <input type="password" name="confirm_pw" placeholder="Confirm Password" required> <br> <br>
+                <input type="submit" value="Submit">
+          </form>
+      </div>
+
+</body>
+</html>

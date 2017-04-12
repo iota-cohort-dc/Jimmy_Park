@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends Add Friends</title>
+    <style>
+    body{
+      background-color: #FBFFDB;
+      padding: 100px;
+    }
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+    fieldset{
+      margin: 20px 0px;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main">
+
+        <table style="width:100%">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Friends Since</th>
+            <th>Year</th>
+          </tr>
+          {% for friend in postfriends: %}
+          <tr>
+            <td>{{ friend['name'] }}</td>
+            <td>{{ friend['age'] }}</td>
+            <td>{{ friend['frienddate'] }}</td>
+            <td>{{ friend['year'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+
+        <fieldset>
+          <legend>My Friends List</legend>
+            <form action="/process" method="post">
+              <p>Name: <input type="text" name="name" value="" required></p>
+              <p>Age: <input type="date" name="age" value=""></p>
+              <p>Friends Since: <input type="text" name="frienddate" value=""></p>
+              <p>Year: <input type="text" name="year" value=""></p>
+              <p><input type="submit" name="" value="Submit"></p>
+            </form>
+        </fieldset>
+
+
+      </div>
+    </div>
+  </body>
+</html>

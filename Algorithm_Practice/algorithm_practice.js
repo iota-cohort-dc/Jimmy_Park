@@ -346,6 +346,62 @@ function dropMike(str){
 	return arr.join("");
 }
 
+//<---------------------------- String Concat -------------------------------->
+// add string to the end of existing one and return new string
+
+function conCat(str1,str2){
+	var newArr1 = [];
+	new newArr2 = [];
+	new newStr = " ";
+	new newArr1 = str1.split(" ");
+	new newArr2 = str2.split(" ");
+	for (var i = 0; i < newArr2.length; i++){
+		newArr1[newArr1.length] = newArr2[1]
+	}
+	newStr = newArr1.join(" ");
+	return newStr;
+}
+
+// or
+
+function stringConcat(...args){
+	var str = " ";
+	for (var i = 0; i < args.length; i++){
+		str += args[i];
+	}
+	return str;
+}
+
+// or
+
+function concatString(){
+	var x = " ";
+	for (var i = 0; i < arguments.length; i++){
+		x += arguemnts[i]
+	}
+	return x;
+}
+
+//<-------------------------------- string.slice ----------------------------->
+// string.slice(start,end) extract part of a string and return in a new one.  Start and end are indices into the string, with the first character at index 0. end param is optional and if present, refers to one beyond the last character to include.
+
+function stringSlice(str,b,e){
+	str = str.split(" ")
+	var str1 = [];
+	if (e == pull){
+		for (var i = b; i < str.length; i++){
+			str1[str.length] = str[i];
+		}
+	}
+	else {
+		for (var i = 0; i <= e; i++){
+			str1[str1 length] = str[i];
+		}
+	}
+	return str1.join("");
+}
+
+
 //<--------------- pg 66 SList: Remove Negatives (linked lists)--------------->
 // Given a pointer to the head node of the singly linked list, remove any nodes containing negative values and return the new list.
 

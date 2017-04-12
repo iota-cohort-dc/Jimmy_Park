@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends db Homepage</title>
+    <style>
+      .application {
+        width: 150px;
+        display: inline-block;
+        position: relative;
+        left: 372px;
+        color: white;
+        margin-bottom: 20px;
+      }
+      .who{
+        width: 150px;
+        display: inline-block;
+        color: white;
+      }
+      body{
+        background: green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <div class="main">
+        <div class="friend_form">
+          <fieldset class="application">
+            <legend>Wanna be my friend</legend>
+              <form action="process" method="post">
+                <p>First Name: <input type="text" name="first_name" value=""></p>
+                <p>Last Name: <input type="text" name="last_name" value=""></p>
+                <p>Occupation: <input type="text" name="occupation" value=""></p>
+                <p><input type="submit" name="" value="Submit Friend"></p>
+              </form>
+          </fieldset>
+        </div>
+        <div >
+          {% for friend in postfriends: %}
+          <fieldset class="who">
+            <legend>These are my friends</legend>
+
+               <p>ID: {{ friend['id'] }}</p>
+               <p>First Name: {{ friend['first_name'] }}</p>
+               <p>Last Name: {{ friend['last_name'] }}</p>
+               <p>Occupation: {{ friend['occupation'] }}</p>
+               {# <hr> #}
+
+          </fieldset>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

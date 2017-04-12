@@ -17,10 +17,8 @@ def submit():
 
     if len(request.form['email']) < 1:
         flash("Email cannot be blank!")
-
     elif not EMAIL_REGEX.match(request.form['email']):
         flash("Invalid Email Address!")
-        
     else:
         flash("Success!")
 
@@ -34,7 +32,7 @@ def submit():
         print "test 2222222222222222222222222"
         return redirect('/')
 
-    if len(request.form['password']) < 8:
+    if len(request.form['password']) < 9:
         flash('Password has to be at least 8 characters')
         print "test 33333333333333333333333333"
         return redirect('/')

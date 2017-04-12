@@ -1,0 +1,49 @@
+.wrapper{
+  width: 900px;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.catagory{
+  margin: 0px;
+  text-align: center;
+  color: green;
+}
+
+.farm{
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  border: 1px solid red;
+}
+
+.cave{
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  border: 1px solid red;
+}
+
+.house{
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  border: 1px solid red;
+}
+
+.casino{
+  padding: 10px;
+  display: inline-block;
+  width: 200px;
+  border: 1px solid red;
+}
+.totalgold{
+  color: gold;
+}
+submit{
+  color: gold;
+}
+fieldset{
+  border: 2px solid black;
+}
