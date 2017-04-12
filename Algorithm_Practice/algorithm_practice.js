@@ -427,6 +427,38 @@ this.removeNegatives = function SLL (){
   }
 }
 
+//+++++++++++++++++++++++++++ LINKED LISTS ++++++++++++++++++++++++++++++
+
+//<------------------------ SLL add to front --------------------------->
+
+function node(val){
+	this.val = value;
+	this.head = null;
+}
+function SLL(){
+	this.head = null;
+	this.addFront = function(val){
+		var node =  new Node(val);
+		if(!this.head){    		//or can say if(this.head == null)
+			this.head = node;
+			return this;
+		}
+		else{
+			node.next = this.head;
+			this.head = node;
+			return this;
+		}
+	}
+}
+var myList = new SLL();
+console.log(myList);
+myList.addFront(4);
+console.log(myList);
+myList.addFront(5).addFront(6);
+console.log(myList);
+
+
+
 //<----------------- page 63 SList: split on Value----------------------->
 
 function ListNode () {
