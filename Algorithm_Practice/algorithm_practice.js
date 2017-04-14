@@ -401,6 +401,7 @@ function stringSlice(str,b,e){
 	return str1.join("");
 }
 
+//+++++++++++++++++++++++++++++ LINKED LISTS ++++++++++++++++++++++++++++++++
 
 //<--------------- pg 66 SList: Remove Negatives (linked lists)--------------->
 // Given a pointer to the head node of the singly linked list, remove any nodes containing negative values and return the new list.
@@ -409,30 +410,32 @@ function ListNode (){
   this.val = value;
   this.next = null;
 }
-this.removeNegatives = function SLL (){
-  this.head = null;
-  var current = this.head;
-  var temp = null;
-  if ( !this.head ){
-    return false;
-  }
-  while( current.next != null){}
-    if ( current.val > 0 ){
-      current = current.next;
-    }
-    else; {
-    temp = current.next;
-    temp.next = current.next.next;
-    }
-  }
+		function SLL(){
+			this.removeNegatives = function SLL (){
+		  this.head = null;
+		  var current = this.head;
+		  var temp = null;
+		  if ( !this.head ){
+		    return false;
+			}
+	  }
+	  while( current.next != null){}
+	    if ( current.val > 0 ){
+	      current = current.next;
+	    }
+	    else; {
+	    temp = current.next;
+	    temp.next = current.next.next;
+	    }
+	  }
 }
 
-//+++++++++++++++++++++++++++ LINKED LISTS ++++++++++++++++++++++++++++++
+//<------------------------ add on to this function --------------------------->
+//<------------------------ one long function --------------------------------->
+//<------------------------ SLL add to front plus others ---------------------->
 
-//<------------------------ SLL add to front --------------------------->
-
-function node(val){
-	this.val = value;
+function Node(val){
+	this.val = val;
 	this.head = null;
 }
 function SLL(){
@@ -449,14 +452,99 @@ function SLL(){
 			return this;
 		}
 	}
+	// new function here
 }
-var myList = new SLL();
-console.log(myList);
-myList.addFront(4);
-console.log(myList);
-myList.addFront(5).addFront(6);
-console.log(myList);
 
+var luisList = new SLL()
+luisList.addFront(5).addFront(10).addFront(15).addFront(20)
+console.log(luisList.head)
+// in terminal // node file_name.js
+
+//<------------------------ SLL add to front --------------------------->
+
+function Node(val){
+	this.val = val;
+	this.head = null;
+}
+function SLL(){
+	this.head = null;
+	this.addFront = function(val){
+		var node =  new Node(val);
+		if(!this.head){    		//or can say if(this.head == null)
+			this.head = node;
+			return this;
+		}
+		else{
+			node.next = this.head;
+			this.head = node;
+			return this;
+		}
+	}
+	// new function here
+}
+
+var luisList = new SLL()
+luisList.addFront(5).addFront(10).addFront(15).addFront(20)
+console.log(luisList.head)
+// in terminal // node file_name.js
+
+//<--------------------------- contains --------------------------------->
+// given a ListNode pinter and a val, return whether val is found in any node in a ListNode
+
+function Node (val){
+	this.val = val;
+	this.next = null;
+}
+function SLL (){
+	this.head = null;
+	this.contains = function(val){
+		if(!this.head){    		//or can say if(this.head == null)
+			this.head = node;
+			return this;
+		}
+		var current = this.head;
+		while(current){
+			if(current.value === val){
+				return True;
+			}
+		}
+		return False;
+	}
+}
+
+//<------------------------------- length ------------------------------------->
+// create a function taht accepts a pointer to the first list node, and returns nubmer of nodes in that SList.
+function Node(val){
+	this.val = val;
+	this.next = null;
+}
+function SLL(){
+	this.head = null;
+	this.length = function(){
+		
+
+
+//<-------------------------------------------------------------->
+
+//<---------------------------- remove front ---------------------------->
+// given a pointerto the first node in a list, remove the head node and return the new list node. if list is empty, return null.
+
+function Node(val){
+	this.val = val;
+	this.next = null;
+}
+function SLL(){
+	this.head = null;
+	this.removeFront = function(){
+		if (!this.head){
+			return False;
+		}
+		current = this.head;
+		current = current.next;
+		this.head = current;
+	}
+	return this.head;
+}
 
 
 //<----------------- page 63 SList: split on Value----------------------->

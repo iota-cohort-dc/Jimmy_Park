@@ -113,7 +113,7 @@ def the_wall():
     }
     logged_user = mysql.query_db(query, data)
 
-    q_messages = "SELECT users.first_name, users.last_name, messages.id AS message_id, messages.messages from messages LEFT JOIN users ON messages.users_id = users.id"
+    q_messages = "SELECT users.first_name, users.last_name, messages.id AS message_id, messages.messages FROM messages LEFT JOIN users ON messages.users_id = users.id"
     messages = mysql.query_db(q_messages)
 
     c_messages = "SELECT users.first_name, users.last_name, comments.id AS comments_id, comments.comment, comments.messages_id FROM comments LEFT JOIN messages ON messages.user_id = users.id"
