@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disappearing Ninjas </title>
+  </head>
+  <body>
+
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/ninjas">All Ninjas</a></li>
+          <li><a href="/ninjas/blue">Leonardo = Blue</a></li>
+          <li><a href="/ninjas/red">Raphael = Red</a></li>
+          <li><a href="/ninjas/orange">Michelangelo = Orange</a></li>
+          <li><a href="/ninjas/other">April</a></li>
+      </ul>
+      
+      <p>{{displayAll}}</p>
+        {% load static from staticfiles %}
+
+            {% if displayAll == True %}
+                <img src="{% static "NinjaApp/images/tmnt.png" %}">
+            {% endif %}
+
+        {% load static from staticfiles %}
+            {% if color == "blue" %}
+                <img src="{% static "NinjaApp/images/leonardo.jpg" %}">
+            {% elif color == "red" %}
+                <img src="{% static "NinjaApp/images/raphael.jpg" %}">
+            {% elif color == "orange" %}
+                <img src="{% static "NinjaApp/images/michelangelo.jpg" %}">
+            {% elif color == "purple" %}
+                <img src="{% static "NinjaApp/images/donatello.jpg" %}">
+            {% elif color != 'color' %}
+                <img src="{% static "NinjaApp/images/notapril.jpg" %}">
+            {%endif%}
+
+
+
+  </body>
+</html>

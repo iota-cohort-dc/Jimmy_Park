@@ -33,22 +33,22 @@
           <p><input type="submit" name="" value="Post a Message"></p>
         </form>
       </div>
+      <hr>
 
-      <div class="">
-        <h4>name of the person here</h4>
-        <p>body of message here</p>
 
-        {% for message in messages %}
-        <p>{{message}}</p>
-        <p>{{ messages.messages }} - posted by:{{messages.first_name}} {{ messages.last_name}}</p>
+      {% for item in messages %}
 
-          <form action="/addMessage/{{messages.id}}/comments" method="POST">
-          			<textarea name="comments" value="{{messages.id}}"></textarea>
-          			<input type="submit" name="">
+        <div class="">
+
+          <p>{{ item.messages }} - posted by: {{item.first_name}} {{ item.last_name}}</p>
+
+
+          <form action="/addMessage/{{item.id}}/addComment" method="POST">
+        			<textarea name="comments" value="{{item.id}}"></textarea>
+        			<input type="submit" name="">
           </form>
-        {% endfor %}
-
-      </div>
+        </div>
+      {% endfor %}
 
     </div>
   </body>

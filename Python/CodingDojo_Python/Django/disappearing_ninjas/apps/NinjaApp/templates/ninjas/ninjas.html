@@ -12,12 +12,9 @@
             {{displayAll}}
         </p>
 
-            {% load static from staticfiles %}
+                {% load static from staticfiles %}
                 {% if displayAll == True %}
-                    <img src="{% static "images/tmnt.png" %}">
-                {% endif %}
-
-            {% load static from staticfiles %}
+                    <img src="{% static "/images/tmnt.png" %}">
                 {% if color == "blue" %}
                     <img src="{% static "images/leonardo.jpg" %}">
                 {% elif color == "red" %}

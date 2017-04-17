@@ -72,8 +72,9 @@ def reg_process():
             'pass': pw_hash,
         }
         user_id = mysql.query_db(query,query_data)
-        session['user_id'] = user_id
-        return redirect("/the_wall")
+        # session['user_id'] = user_id
+        flash("You are Registered. Please Login.")
+        return redirect("/")
 
 @app.route("/log_process", methods=["POST"])
 def log_process():
@@ -87,7 +88,9 @@ def log_process():
         flash('Invalid Email!')
     else:
         if bcrypt.check_password_hash(userInQuestion[0]['password'], request.form['password']):
+            flash('Successful Login')
             session['user_id'] = userInQuestion[0]['id']
+            session['logged_name'] = userInQuestion[0]['first_name']
             return redirect("/the_wall")
         else:
             flash('This Password is Invalid!')
@@ -96,22 +99,22 @@ def log_process():
 
 @app.route("/the_wall")
 def the_wall():
-    if 'user_id' not in session:
-        return redirect("/")
+    # if 'user_id' not in session:
+    #     return redirect("/")
 
     query = "SELECT users.first_name, users.last_name, messages.messages, messages.created_at, messages.id FROM users JOIN messages ON users.id = messages.users_id ORDER BY messages.id DESC"
+
+    # query2 = "SELECT users.first_name, users.last_name, comments.comments, comments.created_at, comments.id FROM messages JOIN comments ON messages.users_id = comments.users_id ORDER BY comments.id DESC"
+
+
     data = {
         "id": session['user_id']
     }
-    logged_user = mysql.query_db(query,data)
-
-    # q_messages = "SELECT users.first_name, users.last_name, messages.message, messages.created_at, messages.id FROM users JOIN messages ON users.id = messages.user_id ORDER BY messages.id DESC"
-    #
-    # c_messages = "SELECT users.first_name, users.last_name, comments.comments, comments.created_at, comments.message_id, comments.user_id FROM users JOIN comments ON users.id = comments.user_id ORDER BY comments.id ASC"
-
-    mysql.query_db(query,data)
-
-    return render_template("the_wall.html", user=logged_user[0], messages=logged_user)
+    result = mysql.query_db(query,data)
+    # result2 = mysql.query_db(query2,data)
+    # print result2
+    # mysql.query_db(query,data)
+    return render_template("the_wall.html", messages=result,name=session["logged_name"])
 
 @app.route("/addMessage", methods=['POST'])
 def addMessage():
@@ -120,21 +123,30 @@ def addMessage():
         'message': request.form['messages'],
         'users_id': session['user_id'],
     }
-    print"this this "*20
+
     mysql.query_db(query,data)
     return redirect('/the_wall')
 
-
 @app.route("/addMessage/<message_id>/addComment", methods=['POST'])
 def addComment(message_id):
-    query = "INSERT INTO comments (messages_id, users_id, comment, created_at, updated_at) VALUES (:messages_id, :users_id, :comment, NOW(),NOW())"
+    print " query" * 58
+    query = "INSERT INTO comments (messages_id, users_id, comment, created_at, updated_at) VALUES (:message_id, :users_id, :comment, NOW(),NOW())"
+
     data = {
-        'messages_id': request.form['messages_id'],
-        'user_id': session['user_id'],
-        'comment': request.form['comment'],
+        'message_id':message_id,
+        'users_id': session['user_id'],
+        'comment': request.form['comments'],
     }
+    print "after after ~~~~~~" * 10
+    print data
     mysql.query_db(query,data)
     return redirect("/the_wall")
+
+
+
+
+
+
 
 @app.route("/logout")
 def logout():

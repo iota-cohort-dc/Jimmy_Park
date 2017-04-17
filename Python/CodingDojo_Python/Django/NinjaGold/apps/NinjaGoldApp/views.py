@@ -19,6 +19,7 @@ def process(request):
         print gold
         request.session['t_gold'] += gold ## taking gold in above and adding the gold from randint
         prnt_farm_actvty = "You got " + str(gold) + " gold coins from the farm." + "  " +  str(datetime.datetime.now().strftime('(%Y/%m/%d %H:%M)'))
+
         request.session['activity'].append(prnt_farm_actvty) # append ...to activity i think
         print request.session['activity']
 

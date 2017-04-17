@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold Django</title>
+    <style>
+      body{
+        background-color:#28536C;
+      }
+      .wrapper{
+        padding: 50px;
+      }
+      fieldset{
+        display: inline-block;
+        width: 170px;
+        height: 150px;
+        text-align: center;
+        color: white;
+      }
+      .yourGold{
+        display: block;
+        color: white;
+      }
+      .activityArea{
+        width: 500px;
+        height: 200px;
+        background-color: white;
+        overflow: scroll;
+        padding: 5px 10px 5px 20px;
+        color: ;
+      }
+      h3{
+        color: white;
+      }
+      a{
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main">
+        <h3 class="yourgold">Your Gold: {{request.session.total_gold}}</h3>
+        <p><a href="/reset">Give me back your Gold!</a></p>
+
+        <fieldset>
+          <legend>Farm</legend>
+          <h2>Farm</h2>
+          <p>(earns 10-20 golds)</p>
+          <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="farm">
+            <input type="submit" name="" value="Find Gold!">
+          </form>
+        </fieldset>
+
+        <fieldset>
+          <legend>Cave</legend>
+          <h2>Cave</h2>
+          <p>(earns 5-10 golds)</p>
+          <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="cave">
+            <input type="submit" name="" value="Find Gold!">
+          </form>
+        </fieldset>
+
+
+        <fieldset>
+          <legend>House</legend>
+          <h2>House</h2>
+          <p>(earns 2-5 golds)</p>
+          <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="house">
+            <input type="submit" name="" value="Find Gold!">
+          </form>
+        </fieldset>
+
+        <fieldset>
+          <legend>Casino</legend>
+          <h2>Casino</h2>
+          <p>(earns/takes 0-5- golds)</p>
+          <form class="" action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="casino">
+            <input type="submit" name="" value="Find Gold!">
+          </form>
+        </fieldset>
+
+        <h3>Activitiy: make this area overflow</h3>
+
+
+        <div class="activityArea">
+          {% for item in request.session.activity %}
+          <p >{{item}}</p>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

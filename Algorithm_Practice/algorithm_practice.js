@@ -382,7 +382,7 @@ function concatString(){
 	return x;
 }
 
-//<-------------------------------- string.slice ----------------------------->
+//<------------------------------ string.slice ------------------------------->
 // string.slice(start,end) extract part of a string and return in a new one.  Start and end are indices into the string, with the first character at index 0. end param is optional and if present, refers to one beyond the last character to include.
 
 function stringSlice(str,b,e){
@@ -440,7 +440,7 @@ function Node(val){
 }
 function SLL(){
 	this.head = null;
-	this.addFront = function(val){
+	this.addFront = function(val){ // addFront
 		var node =  new Node(val);
 		if(!this.head){    		//or can say if(this.head == null)
 			this.head = node;
@@ -452,15 +452,28 @@ function SLL(){
 			return this;
 		}
 	}
+	this.back = function(){   // back
+		if(!this.back){
+			return False;
+		}
+		current = this.head;
+		while(current){
+			if(current.next == null){
+				return current.val;
+			}
+			current = current.next
+		}
+	}
 	// new function here
 }
 
 var luisList = new SLL()
 luisList.addFront(5).addFront(10).addFront(15).addFront(20)
-console.log(luisList.head)
+// console.log(luisList.head)
 // in terminal // node file_name.js
+luis.List.back()
 
-//<------------------------ SLL add to front --------------------------->
+//<---------------------------- SLL add to front ----------------------------->
 
 function Node(val){
 	this.val = val;
@@ -468,7 +481,7 @@ function Node(val){
 }
 function SLL(){
 	this.head = null;
-	this.addFront = function(val){
+	this.addFront = function(val){ //--addFront
 		var node =  new Node(val);
 		if(!this.head){    		//or can say if(this.head == null)
 			this.head = node;
@@ -483,12 +496,37 @@ function SLL(){
 	// new function here
 }
 
-var luisList = new SLL()
-luisList.addFront(5).addFront(10).addFront(15).addFront(20)
-console.log(luisList.head)
+// var luisList = new SLL()
+// luisList.addFront(5).addFront(10).addFront(15).addFront(20)
+// console.log(luisList.head)
 // in terminal // node file_name.js
 
-//<--------------------------- contains --------------------------------->
+//<-------------------------------- Back ------------------------------------->
+function Node(val){
+	this.val = val;
+	this.head = null;
+}
+function SLL(){
+	this.head = null;
+	this.back = function(val){
+		if(!this.back){
+			return False;
+		}
+		current = this.head;
+		while(current){
+			if(current.next == null){
+				return current.val;
+			}
+			current = current.next
+		}
+	}
+}
+
+//<----------------------------- Remove Back --------------------------------->
+
+//<------------------------------- Add Back ---------------------------------->
+
+//<------------------------------- contains ---------------------------------->
 // given a ListNode pinter and a val, return whether val is found in any node in a ListNode
 
 function Node (val){
@@ -521,7 +559,7 @@ function Node(val){
 function SLL(){
 	this.head = null;
 	this.length = function(){
-		
+
 
 
 //<-------------------------------------------------------------->
@@ -585,13 +623,13 @@ function SLL () {
 	}
 }
 
-var list  = new SLL ()
-list.addFront(5)
-list.addFront(2)
-list.addFront(7)
-list.addFront(1)
-list.addFront(22)
-console.log(list.SplitOnVal(4));
+// var list  = new SLL ()
+// list.addFront(5)
+// list.addFront(2)
+// list.addFront(7)
+// list.addFront(1)
+// list.addFront(22)
+// console.log(list.SplitOnVal(4));
 
 //<------------------------- deck of cards -------------------------->
 
