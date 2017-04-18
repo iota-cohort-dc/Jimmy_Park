@@ -7,13 +7,13 @@ def index(request):
     return render(request, 'lr_templates/index.html')
 
 def r_process(request):
-    data = {
-    "first_name" : request.POST['first'],
-    "last_name" : request.POST['last'],
-    "email" : request.POST['email'],
-    "pass" : request.POST['pass'],
-    "c_pass" : request.POST['c_pass']
-    }
+    # data = {
+    # "first_name" : request.POST['first'],
+    # "last_name" : request.POST['last'],
+    # "email" : request.POST['email'],
+    # "pass" : request.POST['pass'],
+    # "c_pass" : request.POST['c_pass']
+    # }
 
     result = User.objects.validate(data)
     if result[0]:
@@ -27,10 +27,10 @@ def r_process(request):
         return redirect("/")
 
 def l_process(request):
-    data = {
-    "email": request.POST['email'],
-    "pass": request.POST['pass'],
-    }
+    # data = {
+    # "email": request.POST['email'],
+    # "pass": request.POST['pass'],
+    # }
     result = User.objects.l_process(data)
 
     if result[0]:

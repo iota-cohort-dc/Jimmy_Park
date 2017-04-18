@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Surprise Me Show Page</title>
+  </head>
+  <body>
+      <div class="wrapper">
+          <div class="main">
+
+            {% for item in word %}
+              <p>{{item}}</p>
+              <hr>
+              {% endfor %}
+
+            <p> <a href="/">Go Back!</a> </p>
+
+          </div>
+      </div>
+  </body>
+</html>

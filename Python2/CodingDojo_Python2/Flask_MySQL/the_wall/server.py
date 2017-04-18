@@ -51,6 +51,7 @@ def reg_process():
     if  not data['email']:
         flag = True
         flash('You must Enter an Email!')
+        
     if len(data['password']) < 8:
         flag = True
         flash('Your Password must be at least 8 characters!')

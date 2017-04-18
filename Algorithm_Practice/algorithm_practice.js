@@ -524,7 +524,50 @@ function SLL(){
 
 //<----------------------------- Remove Back --------------------------------->
 
+function Node(val){
+	this.val = val;
+	this.head = null;
+}
+function SLL(){
+	this.head = null;
+	this.removeBack = function(){
+		if(!this.head){
+			return False;
+		}
+		var current = this.head;
+		if (!current.next){
+			this.head = null;
+		}
+		while(current.next.next){
+			current = current.next;
+		}
+		current.next = null;
+	}
+	return this;
+}
+
 //<------------------------------- Add Back ---------------------------------->
+
+function Node(val){
+	this.val = val;
+	this.head = null;
+}
+function SLL(){
+	this.head = null;
+	this.addBack = function(){
+		if(!this.head){
+			return False;
+		}
+		var current = this.head;
+		var node = new Node(val);
+		while(current){
+			if(current.next == null){
+				current.next = node;
+				return this;
+			}
+			current = current.next;
+		}
+	}
 
 //<------------------------------- contains ---------------------------------->
 // given a ListNode pinter and a val, return whether val is found in any node in a ListNode
