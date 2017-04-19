@@ -605,7 +605,33 @@ function SLL(){
 
 
 
-//<-------------------------------------------------------------->
+//<-------------------------- Remove Negatives ------------------------------->
+//  not sure this work. worked on this solo
+// this is NOT a working solution
+function Node(val){
+	this.val = val;
+	this.next = null;
+}
+function SLL(){
+	this.head = null;
+	this.removeNegatives = function(){
+		if(!this.head){
+			return False;
+		}
+		var current = this.head;
+		if(this.head.val < 0){
+			this.head = this.head.next;
+			var current = this.head;
+			while(current){
+				if(current.next.val < 0){
+					current.next = current.next.next;
+				}
+				var current.next = current.next;
+			}
+		}
+	}
+	return this;
+}
 
 //<---------------------------- remove front ---------------------------->
 // given a pointerto the first node in a list, remove the head node and return the new list node. if list is empty, return null.

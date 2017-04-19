@@ -12,9 +12,17 @@
           <h2>Welcome the The Wall</h2>
           <h4>Please Login or Register a New Account</h4>
         </div>
+        {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
 
         <div class="mid">
           <form class="" action="/register" method="post">
+                 {% csrf_token %}
             <p>First Name: <input type="text" name="first_name" value=""></p>
             <p>Last Name: <input type="text" name="last_name" value=""></p>
             <p>Email: <input type="text" name="email" value=""></p>
@@ -24,12 +32,13 @@
           </form>
 
           <form class="" action="/login" method="post">
+                 {% csrf_token %}
             <p>Email: <input type="text" name="email" value=""></p>
             <p>Password: <input type="password" name="password" value=""></p>
             <p><input type="submit" name="" value="Login!"></p>
           </form>
         </div>
-        
+
       </div>
     </div>
   </body>
