@@ -2,6 +2,17 @@ from __future__ import unicode_literals
 from django.db import models
 from ..BeltReviewApps.models import User
 
+##<-------------------------------------------------------------------
+login reg
+from __future__ import unicode_literals
+from django.db import models
+from django.contrib import messages
+import bcrypt
+import re
+from django.conf import settings
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+##<-------------------------------------------------------------------
+
 # create this / try writing on paper first then apply
 # class name is NOUN
 # this is like the ERD from MySQL

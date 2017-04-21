@@ -12,13 +12,20 @@
 
         <h3>Post a message</h3>
         <form class="" action="addMessage" method="post">
-          <textarea name="textarea" rows="8" cols="80"></textarea>
+              {% csrf_token %}
+          <textarea name="message" rows="8" cols="80"></textarea>
           <input type="submit" name="" value="Post a Message">
         </form>
 
         <ul>
-          <li>(* add posts and comments section *)</li>
+
+          {# {% for message in messages %}
+          <li> {{message.message}} </li>
+          {% endfor %} #}
+
           <form class="" action="addComment" method="post">
+                {% csrf_token %}
+            <textarea name="comment" rows="2" cols="50"></textarea>
             <input type="submit" name="" value="Post a Comment">
           </form>
         </ul>

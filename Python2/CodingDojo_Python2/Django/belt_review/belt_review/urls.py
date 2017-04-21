@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-#from django.contrib import admin
+from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('apps.loginReg.urls', namespace='login')),
-    url(r'^books/', include('apps.beltRev.urls', namespace='books'))
+    url(r'^', include('apps.BeltReviewApps.urls', namespace = 'login')),
+    url(r'^books/', include('apps.BookApps.urls', namespace = 'books')),
+
 ]

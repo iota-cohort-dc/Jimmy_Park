@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books Home Main Page</title>
+  </head>
+  <body>
+
+    <h1>Welcome, {{user.name}}!</h1>
+    <a href="{% url 'books:add' %}">Add Book and Review</a><br>
+    <a href="{% url 'login:logout' %}">Logout</a>
+
+    <h3>Recent Book Reviews:</h3>
+    {% for review in reviews %}
+      <p><a href="{% url 'books:displayRev' review.book.id %}">{{review.book.title}}</p>
+      <p>Rating: {{review.rating}}</p>
+      <p><a href="{% url 'books:userPage' review.user.id %}">{{review.user.name}}</p>
+      <p>{{review.content}}</p>
+      <p>{{review.created_at}}</p>
+    {% endfor %}
+
+    <h3>Other Books with Reviews:</h3>
+    {% for review in otherRevs %}
+    <p><a href="{% url 'books:displayRev' review.book.id %}">{{review.book.title}}</a></p>
+    {% endfor %}
+
+  </body>
+</html>

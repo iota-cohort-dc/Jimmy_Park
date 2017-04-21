@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Information Page</title>
+  </head>
+  <body>
+
+    <a href="{%url 'login:logout'%}">Logout</a>
+    <a href="{%url 'books:index'%}">Home</a>
+
+    {% for u in user %}
+      <h3>User Name: {{u.username}}</h3>
+      <p>Name: {{u.name}}</p>
+      <p>Email: {{u.email}}</p>
+      <p>Total Reviews: {{u.num_reviews}}</p>
+    {% endfor %}
+
+    <h3>Posted Reviews On the Following Books: </h3>
+    <ul>
+      {% for review in revUser %}
+        <li> <a href="{% url 'books:displayRev' review.book.id %}"></a> </li>
+      {% endfor %}
+    </ul>
+
+
+  </body>
+</html>

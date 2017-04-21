@@ -1,28 +1,22 @@
 from __future__ import unicode_literals
 from django.db import models
-from ..loginReg.models import User
+from ..BeltReviewApps.models import User
 
-
+# create this / try writing on paper first then apply
+# class name is NOUN
+# this is like the ERD from MySQL
 class Books(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length = 255)
     created_at = models.DateTimeField(auto_now_add = True)
 
 class Authors(models.Model):
-    name = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add = True)
+    name = models.CharField(max_length = 255)
     books = models.ManyToManyField(Books, related_name="authors")
+    created_at = models.DateTimeField(auto_now_add=True)
 
 class Reviews(models.Model):
-    content = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add = True)
-    rating = models.IntegerField(default=0)
-    user = models.ForeignKey(User, related_name="posted_reviews")
+    comments = models.TextField(max_length = 1000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    ratings = models.IntegerField()
     book = models.ForeignKey(Books, related_name="book_reviews")
-
-    #class User(models.Model):
-	# name = models.CharField(max_length = 30)
-	# username = models.CharField(max_length = 30)
-	# email = models.EmailField()
-	# password = models.CharField(max_length=100)
-	# created_at = models.DateTimeField(auto_now_add = True)
-	# updated_at = models.DateTimeField(auto_now = True)
+    user = models.ForeignKey(User, related_name="posted_reviews")

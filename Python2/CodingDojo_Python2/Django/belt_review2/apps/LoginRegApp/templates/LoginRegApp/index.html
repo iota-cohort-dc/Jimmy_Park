@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belt Review Main Page Login</title>
+  </head>
+  <body>
+        <div>
+          <h1>Welcome!</h1>
+          <div>
+              {% if messages %}
+                  <ul>
+                      {% for message in messages %}
+                      <li{% if message.tags %} class="{{message.tags}}" {% endif %}>
+                      {{ message }}</li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+
+              <h2>Register</h2>
+              <form action="r_process" method="post">
+                      {% csrf_token %}
+                  <p>Name: <input type="text" name="name" required></p>
+                  <p>Alias: <input type="text" name="alias" required></p>
+                  <p>Email: <input type="text" name="email" required></p>
+                  <p>Password: <input type="password" name="pass" required></p>
+                  <p>Confirm Password: <input type="password" name="c_pass" required></p>
+                  <p><input type="submit" name="Register"></p>
+
+              </form>
+          </div>
+          <div>
+              <h2>Login</h2>
+              <form action="/l_process" method="post">
+                      {% csrf_token %}
+                      {{error}}
+                  <p>Email: <input type="text" name="email" required></p>
+                  <p>Password: <input type="password" name="pass" required></p>
+                  <p><input type="submit" name="Login"></p>
+              </form>
+          </div>
+      </div>
+  </body>
+</html>

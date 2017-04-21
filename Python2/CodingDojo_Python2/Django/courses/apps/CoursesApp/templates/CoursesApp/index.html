@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course Django Project</title>
+</head>
+<body>
+	<div style="width: 800px; margin: auto;">
+		<h1>Add a new course</h1>
+		<form action="/course" method="post">
+		{% csrf_token %}
+			Name: <input style="margin-left: 45px; width: 300px;" type="text" name="name"><br>
+			Description: <textarea style="margin-top: 20px;" name="desc" rows="8" cols="40"></textarea><br>
+			<input style="margin-left: 370px;" type="submit" value="Add">
+		</form>
+		<h1>Courses:</h1>
+		<table style="border: 2px solid black; width: inherit; text-align: center;">
+			<tr>
+				<th>Course Name</th>
+				<th>Description</th>
+				<th>Date Added</th>
+				<th>Actions</th>
+			</tr>
+			{% for item in cors %}
+				<tr>
+					<td>{{item.name}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.created_at}}</td>
+					<td><a href="/remove/{{item.id}}">Remove</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>

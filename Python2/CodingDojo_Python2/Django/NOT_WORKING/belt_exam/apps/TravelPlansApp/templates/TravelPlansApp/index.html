@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belt Exam TravelPlansApp</title>
+</head>
+<body>
+	<div style="width: 800px; margin: auto;">
+
+		<h1>Add a Travel Plan</h1>
+		<form action="/course" method="post">
+		{% csrf_token %}
+			Name: <input style="margin-left: 45px; width: 300px;" type="text" name="name"><br>
+			Description: <textarea style="margin-top: 20px;" name="desc" rows="8" cols="40"></textarea><br>
+			<input style="margin-left: 370px;" type="submit" value="Add">
+		</form>
+
+		<h1>Your Trip Schedules:</h1>
+		<table style="border: 2px solid black; width: inherit; text-align: center;">
+			<tr>
+				<th>Destination</th>
+				<th>Travel Start Date</th>
+				<th>Travel End Date</th>
+				<th>Plan/Description</th>
+			</tr>
+			{% for item in plans %}
+				<tr>
+					<td>{{item.destination}}</td>
+					<td>{{item.travelStart}}</td>
+					<td>{{item.travelEnd}}</td>
+          <td>{{item.description}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+
+    <h1>Other User's Travel Plans</h1>
+    <table style="border: 2px solid black; width: inherit; text-align: center;">
+			<tr>
+        <th>Name</th>
+				<th>Destination</th>
+				<th>Travel Start Date</th>
+				<th>Travel End Date</th>
+				<th>Do You Want to Join?</th>
+			</tr>
+			{% for item in plans %}
+				<tr>
+          <th>{{item.plans.user.name}}</th>
+					<td>{{item.destination}}</td>
+					<td>{{item.travelStart}}</td>
+					<td>{{item.travelEnd}}</td>
+          <td> <a href="#">Join</a> </td>
+				</tr>
+			{% endfor %}
+		</table>
+
+    <a href="#">Add Travel Plan</a>
+
+	</div>
+</body>
+</html>

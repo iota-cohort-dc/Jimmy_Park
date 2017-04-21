@@ -5,30 +5,25 @@
     <title>Add Books and Review</title>
   </head>
   <body>
-    <form action="/" method="post">
-        {% csrf_token %}
-        <input type="submit" name="" value="Home">
-    </form>
-    <form class="" action="logout" method="post">
-        {% csrf_token %}
-        <input type="submit" name="" value="Logout">
-    </form>
+
+    <a href="{% url 'books:index' %}">Home</a><br>
+
+    <a href="{% url 'login:logout' %}">Logout</a>
 
     <h2>Add a New Book Title and a Review:</h2>
-      <form action="/reviews" method="post">
+      <form action="{% url 'books:create' %}" method="post">
                   {% csrf_token %}
             <p>Book Title: <input type="text" name="title" value="" required></p>
             <p>Author:
-
               <select name="select_authors">
-                      {% for item in authors %}
-                  <option> {{item.authors}} </option>
-                      {% endfor %}
+
+                  <option> </option>
+
               </select></p>
 
             <p>Or add a new author: <input type="text" name="or_new_author" value=""></p>
 
-            <p>Review: <textarea name="text" rows="8" cols=50 required></textarea></p>
+            <p>Review: <textarea name="text" rows="8" cols=50  required></textarea></p>
             <p><select name="rating">
                   <option value="1">1</option>
                   <option value="2">2</option>
