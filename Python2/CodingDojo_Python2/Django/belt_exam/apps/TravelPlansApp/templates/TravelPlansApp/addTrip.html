@@ -13,8 +13,8 @@
           {% csrf_token %}
       <p>Destination: <input type="text" name="destination" value=""></p>
       <p>Description: <input type="text" name="description" value=""></p>
-      <p>Travel Date From: <input type="text" name="travelStart" placeholder="mm/dd/year"></p>
-      <p>Travel Date To: <input type="text" name="travelEnd" placeholder="mm/dd/year"></p>
+      <p>Travel Date From: <input type="date" name="travelStart"></p>
+      <p>Travel Date To: <input type="date" name="travelEnd"></p>
       <p><input type="submit" value="Add"></p>
     </form>
 

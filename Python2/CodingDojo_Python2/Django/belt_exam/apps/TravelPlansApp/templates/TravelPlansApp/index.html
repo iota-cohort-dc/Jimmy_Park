@@ -20,7 +20,7 @@
 			</tr>
 			{% for item in trips %}
 				<tr>
-					<td>{{item.destination}}</td>
+					<td> <a href="{% url 'plans:showTripPage' id=item.id %}">{{item.destination}}</a> </td>
 					<td>{{item.travelStart}}</td>
 					<td>{{item.travelEnd}}</td>
           <td>{{item.description}}</td>
@@ -29,6 +29,7 @@
 		</table>
 
     <h1>Other User's Travel Plans</h1>
+
     <table style="border: 2px solid black; width: inherit; text-align: center;">
 			<tr>
         <th>Name</th>
@@ -37,16 +38,22 @@
 				<th>Travel End Date</th>
 				<th>Do You Want to Join?</th>
 			</tr>
+
 			{% for item in plans %}
 				<tr>
-          <th>{{item.plans.user.name}}</th>
+						{% for i in users %}
+						{% if i.id == item.planned_user_id %}
+					<td>{{i.name}}</td>
+						{% endif %}
+						{% endfor %}
 					<td>{{item.destination}}</td>
 					<td>{{item.travelStart}}</td>
 					<td>{{item.travelEnd}}</td>
-          <td> <a href="#">Join</a> </td>
+          <td> <a href="{% url 'plans:joinTrip' id=item.id %}">Join</a> </td>
 				</tr>
 			{% endfor %}
 		</table>
+
     <br>
     <br>
 

@@ -5,6 +5,7 @@ import bcrypt
 import re
 from django.conf import settings
 
+
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 class UserManager(models.Manager):

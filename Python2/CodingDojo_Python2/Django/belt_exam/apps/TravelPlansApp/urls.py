@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name = 'page'),
     url(r'^addTrip$', views.addTrip, name = 'addTrip'),
-    url(r'^addTripPlan$', views.addTripPlan, name = 'addTripPlan'),
-    # url(r'^success$', views.success, name = 'success'),
-    # url(r'^logout$', views.logout, name = 'logout'),
+    url(r'^createTrip$', views.createTrip, name = 'addTripPlan'),
+    url(r'^joinTrip/(?P<id>\d+)$', views.joinTrip, name = 'joinTrip'),
+    url(r'^showTrip/(?P<id>\d+)$', views.showTripPage, name = 'showTripPage'),
+
 ]

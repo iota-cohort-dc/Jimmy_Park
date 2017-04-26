@@ -50,8 +50,9 @@ def l_process(request): ### success ###
             return render(request, 'TravelBuddyApp/index.html', context)
 
         user = User.objects.filter(username=username)
+        
         if bcrypt.hashpw(str(password), str(user[0].password)) == user[0].password:
-            request.session['user'] = user[0].id
+            request.session['user_id'] = user[0].id
         else:
             context = {
                 'pass': 'Password not valid'

@@ -109,6 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+# try ET (or) EST for eastern time zone
 
 USE_I18N = True
 
