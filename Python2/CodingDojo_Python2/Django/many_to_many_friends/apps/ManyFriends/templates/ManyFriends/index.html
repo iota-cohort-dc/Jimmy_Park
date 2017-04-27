@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Many to Many Relationship Friends</title>
+    <style>
+      body{
+        padding: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <fieldset>
+      <legend>Imaginary Friends</legend>
+        <table>
+          <tr>
+            <th>Friends 1</th>
+            <th>Friends 2</th>
+          </tr>
+          {% for friend in friends %}
+          <tr>
+            <td>{{friend.name.name}}</td>
+
+
+            <td>{{friend.friend.name}}</td>
+
+            {% endfor %}
+          </tr>
+        </table>
+    </fieldset>
+
+    <h3>Create Friend</h3>
+    <form action="/process" method="post">
+          {% csrf_token %}
+      <p><input type="text" name="create"></p>
+      <p><input type="submit"value="Be Mine"></p>
+    </form>
+
+    <h3>Join Friends</h3>
+    <form action="/join_friends" method="post">
+            {% csrf_token %}
+
+      <select name="friend_1">
+        {% for user1 in users%}
+        <option value="{{user1.id}}">{{user1.name}}</option>
+        {% endfor %}
+      </select>
+
+      {#<-------->#}
+
+      <select name="friend_2">
+        {% for user2 in users%}
+        <option value="{{user2.id}}">{{user2.name}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Begin Mind Meld">
+
+    </form>
+  </body>
+</html>

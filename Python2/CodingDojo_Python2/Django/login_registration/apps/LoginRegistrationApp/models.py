@@ -44,6 +44,7 @@ class UserManager(models.Manager): #
         # all is validated, now encrypt ------------------------------->
         if flag:
             hashed = bcrypt.hashpw(data['pass'].encode(), bcrypt.gensalt())
+            #<---------------- above has .encode()------------------->
             user = User.objects.create(first_name = data['fname'],last_name = data['lname'], email = data['email'], password = hashed)
             # flash("You are Registered! Please Login!")
             print hashed

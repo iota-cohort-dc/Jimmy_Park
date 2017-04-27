@@ -11,24 +11,35 @@ from time import gmtime, strftime
 def index(request):
 	context = {
 	'trips': Trips.objects.filter(Q(planned_user_id=request.session['user_id']) | Q(joining_user =request.session['user_id'])),
-	'plans': Trips.objects.all().exclude(Q(planned_user_id=request.session['user_id']) | Q(joining_user =request.session['user_id'])),
+	'plans':
+	# get all trips where the creator or joined user isn't the user that's logged in. Q and | allow me to do compare two columns
+	Trips.objects.all().exclude(Q(planned_user_id=request.session['user_id']) | Q(joining_user =request.session['user_id'])),
 	'users': User.objects.all(),
 	}
 	return render(request, "TravelPlansApp/index.html", context)
 
 def addTrip(request):
-    return render(request,"TravelPlansApp/addTrip.html")
+    return render(request, "TravelPlansApp/addTrip.html")
 
 def createTrip(request):
-	user = User.objects.get(id=request.session['user_id'])
-	result = Trips.objects.addNewTrip(request.POST,user.id)
+	# user = User.objects.get(id=request.session['user_id'])
+	result = Trips.objects.addNewTrip(request.POST, request.session['user_id'])
+	# print result[0]
+	# print result[1]
+	# after the above code has been run, then result will either include True OR False and errs
 
-	# if result[0] == False:
-	# 	print "False"
-	# return redirect(reverse('plans:addTripPlan'))
-	#
-	# else:
-	return redirect(reverse('plans:page'))
+	if result[0]:
+		return redirect(reverse("plans:page"))
+	# True Trip was made correctly
+
+	else:
+	# Trip wasn't created successfully, and should put errors into messages framework, and then run messages loop after redirecting to addTrip.html
+		for errs in result[1]:
+			messages.error(request, errs)
+		return redirect(reverse("plans:addTrip"))
+
+
+	# return redirect(reverse('plans:page'))
 
 def joinTrip(request,id):
 	joining = User.objects.get(id=request.session['user_id'])
@@ -38,7 +49,7 @@ def joinTrip(request,id):
 
 def showTripPage(request,id):
 	# print "#$%^" * 20
-	trips = Trips.objects.get(id=id)
+
 	context = {
 		'trips': Trips.objects.get(id = id),
 		'planner': User.objects.get(id = trips.planned_user.id),

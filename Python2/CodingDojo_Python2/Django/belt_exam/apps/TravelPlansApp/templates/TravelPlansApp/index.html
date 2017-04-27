@@ -38,14 +38,11 @@
 				<th>Travel End Date</th>
 				<th>Do You Want to Join?</th>
 			</tr>
-
+			{# Checking each trip object #}
 			{% for item in plans %}
 				<tr>
-						{% for i in users %}
-						{% if i.id == item.planned_user_id %}
-					<td>{{i.name}}</td>
-						{% endif %}
-						{% endfor %}
+						<td>{{item.planned_user.name}}</td>
+
 					<td>{{item.destination}}</td>
 					<td>{{item.travelStart}}</td>
 					<td>{{item.travelEnd}}</td>

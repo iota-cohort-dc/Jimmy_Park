@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travel Buddy Main Landing Page</title>
+    <style>
+      body{
+        padding: 100px 200px 100px 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Welcome to Travel Buddy, </h3>
+    <p> <a href="{% url "travel:addTripPage" %}">Add a Trip</a> </p>
+    <p> <a href="{% url "loginReg:logout" %}">Logout</a> </p>
+    <br><br>
+    {#<--------------Your Trip--------------->#}
+    <fieldset>
+      <legend>Your Trip Schedule:</legend>
+        <table>
+          <tr>
+            <th>Destination</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Description</th>
+          </tr>
+          {% for item in trips %}
+            <tr>
+              <td>{{item.destination}}</td>
+              <td>{{item.departure}}</td>
+              <td>{{item.arrival}}</td>
+              <td>{{item.description}}</td>
+            </tr>
+          {% endfor %}
+        </table>
+    </fieldset>
+    <br><br>
+    {#<--------------Others Trip--------------->#}
+    <fieldset>
+      <legend>Other User's Travel Plans:</legend>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Do you want to Join? </th>
+          </tr>
+          {% for x in plans %}
+          <tr>
+            <td>{{x.userplanning.name}}</td>
+            <td>{{x.destination}}</td>
+            <td>{{x.departure}}</td>
+            <td>{{x.arrival}}</td>
+            <td>{{x.description}}</td>
+          {% endfor %}
+          </tr>
+        </table>
+    </fieldset>
+
+  </body>
+</html>

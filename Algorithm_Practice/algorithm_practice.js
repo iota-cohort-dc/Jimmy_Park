@@ -700,6 +700,60 @@ function SLL () {
 // list.addFront(22)
 // console.log(list.SplitOnVal(4));
 
+//<------------------------- singly linked  -------------------------->
+//<----------------------------- queues ------------------------------>
+//<----------------------------- page 76 ----------------------------->
+
+//<--------------------------- Enqueue ------------------------------->
+//<----------- adds a new node the back of the list ------------------>
+
+function ListNode(){ // creates a node
+	this.val = value;
+	this.next = null;
+}
+function SLQueue(){ // this creates list
+	this.head = null;
+	this.tail = null;
+	this.enqueue = function(){ // adds node to queue to list
+		var node = new Node(val); // new node created
+		if(!this.head){      // if there is no head or begining
+			this.head = node;  // putting new created node to this.head *
+			this.tail = node;  // putting new created node to this.tail *
+		}
+		else {
+			this.tail.next = node; // putting new created node behind tail node
+			this.tail = node; // setting the last node to this.tail. (end)
+		}
+		return this;
+	}
+}
+
+
+//<----------------------------- Dequeue ----------------------------->
+//<---------- removes a node at the begining of the list ------------->
+
+function ListNode(){ // creates a node
+	this.val = value;
+	this.next = null;
+}
+function SLQueue(){ // creates a list
+	this.head = null;
+	this.tail = null;
+	this.dequeue = function(){ // adds node to queue to list
+		if(!this.head){ // if there is no begining
+			return False;	// if there is no begining, there is no list
+		}
+		else if (this.head.next = null){ // if there is only 1 node in ListNode
+			this.head = null;  // removing the only node from list
+			this.tail = null;
+		}
+		else {
+			this.head = this.head.next; // setting this.head to the next node
+		}															// which removes the first node
+		return this;
+	}
+}
+
 //<------------------------- deck of cards -------------------------->
 
 function DeckConstructor(){

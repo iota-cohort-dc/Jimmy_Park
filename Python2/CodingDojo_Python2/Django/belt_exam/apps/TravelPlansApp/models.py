@@ -23,7 +23,6 @@ class TripsManager(models.Manager):
             print str(datetime.date.today())
             print data['travelStart']
             errs.append("Start cannot be before todays date")
-            # return (False, errs)
 
         if data['travelStart'] == "":
             flag = False
@@ -32,7 +31,6 @@ class TripsManager(models.Manager):
         if data['travelEnd'] < data['travelStart']:
             flag = False
             errs.append('Cannot have end date before start date')
-            # return (False, errs)
 
         if data['travelEnd'] == "":
             flag = False
@@ -40,16 +38,20 @@ class TripsManager(models.Manager):
 
 
         if flag:
-            # print "444444" * 15
-            # print "AW" * 30
-            self.create(
+
+            trip = self.create(
             destination = data['destination'],
             travelStart = data['travelStart'],
             travelEnd = data['travelEnd'],
             description = data['description'],
             planned_user_id = user_id,
             )
-            return (True)
+            #        0      1
+            return (True, trip)
+        else:
+            # if flag is false then this code block runs.
+            #         0      1
+            return (False, errs)
 
 class Trips(models.Model):
     destination = models.CharField(max_length=255)
