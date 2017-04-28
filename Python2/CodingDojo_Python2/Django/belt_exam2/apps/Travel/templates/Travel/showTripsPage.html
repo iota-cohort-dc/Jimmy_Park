@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show Trips Page</title>
+    <style>
+      body{
+        padding: 100px 200px 100px 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Hello</h3>
+    <p> <a href="{% url "travel:index" %}">Home</a> </p>
+    <p> <a href="{% url "loginReg:logout" %}">Logout</a> </p>
+    <br><br>
+
+    <fieldset>
+      <legend>Your Trips:</legend>
+      <label>Destination: {}</label>
+      <label>Departure: {}</label>
+      <label>Arrival: {}</label>
+    </fieldset>
+    <fieldset>
+      <legend>Who Else is Going:</legend>
+      <label>Name: {}</label>
+    </fieldset>
+
+  </body>
+</html>

@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^addTripPage$', views.addTripPage, name='addTripPage'),
     url(r'^create$', views.create, name='create'),
+    url(r'^showTripsPage$', views.showTripsPage, name='showTripsPage'),
+    url(r'^joinTrip$', views.joinTrip, name='joinTrip'),
 ]

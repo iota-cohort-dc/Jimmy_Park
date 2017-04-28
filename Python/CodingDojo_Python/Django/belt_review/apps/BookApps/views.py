@@ -51,7 +51,6 @@ def create(request):
 
         this_book = Books.objects.get(title=book_title)
         this_author = Authors.objects.get(name=author_name)
-
         this_author.books.add(this_book)
 
         user_id = request.session['user_id']

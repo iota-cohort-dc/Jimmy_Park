@@ -754,6 +754,87 @@ function SLQueue(){ // creates a list
 	}
 }
 
+//<------------------------- Front -------------------------->
+// Create  SLQ method front() to return value at the front of our queue with out removing it
+
+function SLNode(){
+	this.val = value;
+	this.next = null;
+}
+function SLQueue(){
+	var head = null;
+	var tail = null;
+	this.front = function(){
+		if(!this.head){
+			return False;
+		}
+		return this.head.val;
+	}
+}
+
+//<------------------------- Contains -------------------------->
+// Create a method contains(val) to return whether given value is found within our queue
+
+// function SLNode(){
+// 	this.val = value;
+// 	this.next = null;
+// }
+function SLQueue(){
+	var head = null;
+	var tail = null;
+	this.contains = function(val){
+		if(!this.head){
+			return False;
+		}
+		var current = this.head;
+		while(current){
+			if(current.val == val){
+				return True;
+			}
+			current = current.next;
+		}
+		return False;
+	}
+}
+
+//<------------------------- isEmpty -------------------------->
+// Create SLQueue method isEmpty() that returns whether our queue contains no values
+
+function SLQueue(){
+	var head = null;
+	var tail = null;
+	this.isEmpty = function(){
+		if(!this.head){
+			return True;
+		}
+		else {
+			return False;
+		}
+	}
+}
+
+//<----------------------------- Size ------------------------------->
+// Create SLQueue method size() that returns the number of values in our queue
+
+function SLQueue(){
+	var head = null;
+	var tail = null;
+	this.size = function(val){
+		if(!this.head){
+			return 0;
+		}
+		if(this.head == this.tail){
+			return 1;
+		}
+		var count = 1;
+		var current = this.head;
+		while(current){
+			current = current.next;
+		}
+		return count;
+	}
+}
+
 //<------------------------- deck of cards -------------------------->
 
 function DeckConstructor(){

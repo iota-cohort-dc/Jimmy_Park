@@ -26,7 +26,7 @@
           </tr>
           {% for item in trips %}
             <tr>
-              <td>{{item.destination}}</td>
+              <td> <a href="{% url 'travel:showTripsPage' %}"> {{item.destination}}</a></td>
               <td>{{item.departure}}</td>
               <td>{{item.arrival}}</td>
               <td>{{item.description}}</td>
@@ -47,14 +47,15 @@
             <th>Do you want to Join? </th>
           </tr>
           {% for x in plans %}
-          <tr>
-            <td>{{x.userplanning.name}}</td>
-            <td>{{x.destination}}</td>
-            <td>{{x.departure}}</td>
-            <td>{{x.arrival}}</td>
-            <td>{{x.description}}</td>
+            <tr>
+              {# <a href="{% url 'travel:' %}"> </a>  #}
+              <td>{{x.userplanning.name}}</td>
+              <td>{{x.destination}}</td>
+              <td>{{x.departure}}</td>
+              <td>{{x.arrival}}</td>
+              <td>{{x.description}}</td>
+            </tr>
           {% endfor %}
-          </tr>
         </table>
     </fieldset>
 

@@ -30,3 +30,10 @@ def create(request):
             return redirect(reverse('travel:addTripPage'))
 
     return redirect(reverse("travel:addTripPage"))
+
+def joinTrip(request):
+    return redirect("/")
+
+def showTripsPage(request):
+
+    return render(request,"Travel/showTripsPage.html")
