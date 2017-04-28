@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotes Main Landing Page</title>
+      <style>
+        body{
+          padding: 150px;
+        }
+        .inside{
+          width: 250px;
+        }
+        .outside{
+          width: 325px;
+        }
+      </style>
+  </head>
+  <body>
+    <h3>Welcome, {{user.name}}</h3>
+    <a href="{% url 'loginReg:index' %}">Logout</a>
+
+    <h2>Quotable Quotes</h2>
+    <fieldset class="outside">
+      {% for quote in quotes %}
+          <fieldset class="inside">
+              {{quote.quote_message}} <br>
+              <p>Posted by:{{quote.user.name}}</p>
+              <a href="{% url "quotes:addFavorite"  %}">Add to Favorite</a>
+                {#  need to pass in id=quote.id  #}
+          </fieldset>
+      {% endfor %}
+    </fieldset>
+
+    <fieldset class="outside" >
+      <legend>Your Favorites:</legend>
+      <a href="#">Remove from List</a>
+    </fieldset>
+
+    <h3>Contribute a Quote:</h3>
+      <form action="{% url "quotes:addQuote" %}" method="post">
+        {% csrf_token %}
+        <p>Quoted by: <input type="text" name="quote_by"></p>
+        <p>Message: <textarea name="quote_message" rows="8" cols="50"></textarea></p>
+        <p><input type="submit" value="Submit"></p>
+      </form>
+
+  </body>
+</html>

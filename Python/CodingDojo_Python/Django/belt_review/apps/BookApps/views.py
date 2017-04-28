@@ -20,39 +20,36 @@ def addbook(request):
 
 def create(request):
 
-    # #getting this from login registration setting this to variable and equaling to user in  Reviews.objects...
+    # getting this from login registration setting this to variable and equaling to user in  Reviews.objects...
     # user = request.session['user_id']
     #
-    # if request.method == "POST":# use this if you get MultValueDickError at /addbook
+    # if request.method == "POST":   # use this if you get MultValueDickError at /addbook
     #
     #     book = Books.objects.create(title = request.POST['title']) #1 creates object to books database
-    # #2create variable book to input into other tables
+    #  create variable book to input into other tables
     #
     #     Authors.objects.create(name = request.POST['or_new_author'], books = book)
-    # # 3books is set to book to be able to access 'book'
+    #  books is set to book to be able to access 'book'
 
     #     Reviews.objects.create(comments = request.POST['text'], ratings = request.POST['rating'], book = book, user = user)
-    # # rating...s relates to models.py class#
-    # # rating relates to the name="rating" in the html
+    # rating...s relates to models.py class#
+    #  rating relates to the name="rating" in the html
 
     if request.method == "POST":
 
         book_title = request.POST['title']
         author_name = request.POST['or_new_author']
-
         # if author_name == '':
         #     author_name = request.POST['select_authors']
-
         Books.objects.create(title = book_title)
-
-
+        # <------------------------------------------------------>
         if not Authors.objects.filter(name = author_name).exists():
             Authors.objects.create(name = author_name)
 
         this_book = Books.objects.get(title=book_title)
         this_author = Authors.objects.get(name=author_name)
         this_author.books.add(this_book)
-
+        # <------------------------------------------------------>
         user_id = request.session['user_id']
 
         Reviews.objects.create(
