@@ -1,0 +1,32 @@
+# <=========== Models.py practice ============>
+# <~~~~~~~~~ Belt Exam for Quotes ~~~~~~~~~~~>
+
+# (blank=True, null=True)
+# this allows blank and null value to exist even info is blank
+
+# LoginReg ------------------------
+class UserManager(models.Manager):
+    def validate(self,data,user_id):
+        # login val logic
+class Users(models.Model):
+    # user_id  this is hidden
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    user_name = models.CharField(max_length=255)
+    alias = models.CharField(max_length)
+    date_of_birth = models.DateField()
+    email = models.EmailField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+# Quotes--------------------------
+class QuoteManager(models.Manager):
+    def validate(self, data):
+        # quote val logic
+class Quotes(models.Model):
+    # quote_id  this is hidden
+    user_submitted = models.CharField(max_length=255)
+    author_of_quote = models.CharField(max_length=255)
+    quote_content = models.TextField(max_length=1000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

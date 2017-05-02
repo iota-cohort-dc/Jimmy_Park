@@ -14,6 +14,7 @@ def index(request):
         'favorite': Favorites.objects.all(),
     }
 
+    # notSureFavorites = Quotes.objects.filter(id=request.session['user_id'], quote_by = Quote.)
 
 
     return render(request,"Quotes/index.html", context)
@@ -31,14 +32,33 @@ def addQuote(request):
 
         return redirect("/")
 
-def addFavorite(request): # need to pass in ,id
+def addFavorite(request,id): # need to pass in ,id
+# <----------------below was in here previously --------->
+    addToFav = User.objects.get(id=request.session['user_id'])
+    addingFavQuote = Quotes.objects.get(id=id)
 
-    # addToFav = User.objects.get(id=request.session['user_id'])
-    # addingFavQuote = Quotes.objects.get(id=id)
+    # Favorites.objects.create(quotes=addingFavQuote,user=addToFav) this need if..
     # the line above giving error: int() argument must be a string or a number, not 'builtin_function_or_method'
 
     # Favorites.addingFavQuote.add(addToFav)
     # addingFavQuote.user_id.add(addToFav)
+# <-------------above was in here previously------------>
+
+# <-----------------below does not work---------------->
+# -------have repeating keywords-------
+    # quotes = Quotes.objects.get(id=id)
+    # user = User.objects.get(id=request.session['user_id'])
+    # check = Favorites.objects.filter(user = user).filter(quotes = quotes)
+    # if not check:
+    #     Favorites.objects.filter(quotes=quotes, quotes=user)
+    # else:
+    #     messages.error(request,"This is already one of your favorites")
+    # return redirct(reverse("quotes:index"))
+    # <--------------above does not work--------------->
+    # ----have repeating keywords---------
+
+
+
 
     return render(request,"Quotes/index.html")
     # return redirect(reverse("quotes:qindex"))
