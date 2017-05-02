@@ -1,0 +1,16 @@
+
+body {
+    padding: 150px;
+}
+.left{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 75px;
+  width: 30%;
+}
+.right{
+  display: inline-block;
+  vertical-align: top;
+
+  width: 30%;
+}

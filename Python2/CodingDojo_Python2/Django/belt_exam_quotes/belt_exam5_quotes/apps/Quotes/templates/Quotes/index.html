@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Quotes Main Landing Page</title>
-      <style>
-        body{
-          padding: 150px;
+    <style>
+        body {
+            padding: 150px;
         }
-        .inside{
-          width: 250px;
+
+        .inside {
+            width: 250px;
         }
         /*.outside{
           width: auto;
           padding: 20px;
         }*/
-      </style>
-  </head>
-  <body>
+    </style>
+</head>
+
+<body>
     <h3>Welcome, {{user.name}}</h3>
-    <a href="{% url 'loginReg:index' %}">Logout</a>
-    {# ----------All Quotes----------------------- #}
+    <a href="{% url 'loginReg:index' %}">Logout</a> {# ----------All Quotes----------------------- #}
     <h2>Quotable Quotes</h2>
     <fieldset class="outside">
-      {% for quote in quotes %}
+        {% for quote in quotes %}
         <fieldset class="inside">
-          {{quote.quote_content}} <br>
-          <p>Posted by: <a href="{% url "quotes:userInfoPage" id=quote.id  %}"> {{quote.logged_in_user.name}} </a></p>
-          <a href="{% url "quotes:addFavorite" id=quote.id  %}">Add to Favorite</a>
+            {{quote.quote_content}} <br>
+
+            <p>Posted by: <a href="{% url 'quotes:userInfoPage' quote.logged_in_user.id  %}"> {{quote.logged_in_user.name}} </a></p>
+
+            <a href="{% url 'quotes:addFavorite' id=quote.id  %}">Add to Favorite</a>
         </fieldset>
         {% endfor %}
     </fieldset>
     {# ----------Only Your Favored Quotes---------- #}
-    <fieldset class="outside" >
-      <legend>Your Favorites:</legend>
+    <fieldset class="outside">
+        <legend>Your Favorites:</legend>
         <fieldset class="inside">
-          {% for x in inMyFav %}
-            {{x.quote_content}} <br>
-            <p>Posted by: <a href="{% url "quotes:userInfoPage" id=x.id  %}"> {{x.logged_in_user.name}} </a></p>
-            <a href="{% url "quotes:removeFavorite" id=x.id  %}" >Remove from My List</a>
-          {% endfor %}
-      </fieldset>
+            {% for x in inMyFav %} {{x.quote_content}} <br>
+            <p>Posted by: <a href="{% url 'quotes:userInfoPage' id=x.id  %}"> {{x.logged_in_user.name}} </a></p>
+            <a href="{% url 'quotes:removeFavorite' id=x.id  %}">Remove from My List</a> {% endfor %}
+        </fieldset>
     </fieldset>
     {# ----------Submit a Quote-------------------- #}
     <h3>Contribute a Quote:</h3>
-      <form action="{% url "quotes:addQuote" %}" method="post">
+    <form action="{% url 'quotes:addQuote' %}" method="post">
         {% csrf_token %}
         <p>Quoted by: <input type="text" name="author_of_quote"></p>
         <p>Message: <textarea name="quote_content" rows="8" cols="50"></textarea></p>
         <p><input type="submit" value="Submit"></p>
-      </form>
-  </body>
+    </form>
+</body>
+
 </html>
