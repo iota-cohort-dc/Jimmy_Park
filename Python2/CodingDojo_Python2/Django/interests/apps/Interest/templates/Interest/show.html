@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show Page</title>
+    <style>
+    .button {
+      display: block;
+      width: 115px;
+      height: 25px;
+      background: #3148FF;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    </style>
+{# <h3>{{interest.first.user.name}} Interests</h3> #}
+{#   or   #}
+{# <h3>{{user.name}} Interests</h3> #}
+  </head>
+  <body>
+    <div>
+      <h3>{{interest.first.user.name}} Interests</h3>
+      <fieldset>
+        {% for x in interest %}
+        <ul>
+          <li>{{x.interest.interest}}</li>
+        </ul>
+        {% endfor %}
+      </fieldset>
+    </div>
+    <br>
+    <a href="{% url 'interest:users' %}" >back to users</a>
+    <br><br>
+    <a href="{% url 'interest:index' %}" >enter another user interest</a>
+  </body>
+</html>

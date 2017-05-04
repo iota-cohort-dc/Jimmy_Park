@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Client Rescourse Main Page</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'ClientRes/css/style.css' %}">
+
+</head>
+
+<body>
+    <div>
+        <h2>CLIENTS</h2>
+        <table>
+            <tr>
+                <th>Business Name</th>
+                <th>Email</th>
+                <th>Phone #</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <br>
+        <a href="{% url 'index:addClientPage' %}" class="href">AddClientPage</a>
+</body>
+
+</html>
