@@ -6,9 +6,9 @@
   </head>
   <body>
     <h3>Add Client</h3>
-    <form action="{% url 'index:addClient' %}" method="post">
+    <form action="{% url 'index:addClient'%}" method="POST">
       {% csrf_token %}
-      <p>Business Name: <input type="text" name="name"></p>
+      <p>Business Name: <input type="text" name="name" ></p>
       <p>Email: <input type="email" name="email"></p>
       <p>Phone: <input type="text" name="phone"></p>
       <p>Notes: <textarea name="notes" rows="8" cols="80"></textarea></p>

@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^addClientPage$', views.addClientPage, name='addClientPage'),
     url(r'^addClient$', views.addClient, name='addClient'),
+    url(r'^showClient/(?P<id>\d+)$', views.showClient, name='showClient'),
 ]
