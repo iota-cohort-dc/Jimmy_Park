@@ -834,6 +834,63 @@ function SLQueue(){
 		return count;
 	}
 }
+//<----------------------------- Stack------------------------------->
+//<----------------------------- Stack------------------------------->
+//<----------------------------- Stack------------------------------->
+//<----------------------------- Stack------------------------------->
+
+//<----------------------------- push ------------------------------->
+//<----------------------------- pop ------------------------------->
+//<----------------------------- return top ------------------------------->
+//<----------------------------- contains ------------------------------->
+
+function SLStack(){
+	this.val = value;
+	this.next = null;
+}
+function SLStack(){
+	this.top = null;
+	this.push = function(val){
+		if(!this.top){
+			return false;
+		}
+		var node = new Node;
+		node.val = val;
+		node.next = top;
+		top = node;
+	}
+	this.pop = function (){
+		if(!this.top){
+			return false;
+		}
+		var currentTop = this.top;
+		this.top = this.top.next;
+		return currentTop.val;
+	}
+	this.returnTop = function(){
+		if(!this.top){
+			return false;
+		}
+		return this.top.val;
+	}
+	this.contains = function(val){
+		if(!this.top){
+			return false;
+		}
+		var current = this.top;
+		while(current){
+			if(current.val == val){
+				return true;
+			}
+			else {
+				current = current.next;
+			}
+		}
+		return false;
+	}
+}
+
+
 
 //<------------------------- deck of cards -------------------------->
 
