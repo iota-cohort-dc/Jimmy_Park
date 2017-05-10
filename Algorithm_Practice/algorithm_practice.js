@@ -890,6 +890,22 @@ function SLStack(){
 	}
 }
 
+//<------------------------- stack copy -------------------------->
+
+function copyThat (stk){  // this has not been tested
+	var temp = new Stack;
+	var copyStack = new Stack;
+	while(stk.top()){
+		temp.push(stk.top());
+		stk.pop();
+	}
+	while(temp.top()){
+		copyStack.push(temp.top());
+		stk.push(temp.top());
+		temp.pop();
+	}
+	return copyStack;
+}
 
 
 //<------------------------- deck of cards -------------------------->
