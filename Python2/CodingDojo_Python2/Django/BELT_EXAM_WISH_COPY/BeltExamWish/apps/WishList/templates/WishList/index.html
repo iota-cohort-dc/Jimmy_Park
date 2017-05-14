@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WishList</title>
+  </head>
+  <body>
+    <a href="{% url 'loginReg:logout' %}">Logout</a><br><br>
+    <a href="{% url 'wishList:addProductPage' %}">Add Product</a>
+    <h2>Hello {{users.name}}</h2>
+    <h3>Your Wish List:</h3>
+
+    <fieldset>
+      <legend></legend>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Added by</th>
+            <th>Date Added</th>
+            <th>Action</th>
+          </tr>
+            {% for item in my_wish %}
+    			<tr>
+    				<td> <a href="{% url 'wishList:showProduct' id=item.id %}"> {{item.product}} </a> </td>
+    				<td>{{item.planned_user.name}}</td>
+    				<td>{{item.created_at}}</td>
+            {% if users == item.user %}
+            <td><a href="{% url 'wishList:delete' item.id %}">Delete</a></td>
+            {% else %}
+            <td><a href="{% url 'wishList:remove' item.id %}">Remove from my Wishlist</a></td>
+          </tr>
+            {% endif %}
+            {% endfor %}
+    			</tr>
+
+
+        </table>
+    </fieldset>
+    <br><br><br>
+    <h2>this is all the other people wishlist</h2>
+    <fieldset>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Added by</th>
+          <th>Date Added</th>
+          <th>Action</th>
+        </tr>
+        {% for item in not_mine %}
+				<tr>
+					<td><a href="{% url 'wishList:showProduct' id=item.id  %}">{{item.product}}</a></td>
+					<td>{{item.planned_user.name}}</td>
+					<td>{{item.created_at}}</td>
+          <td> <a href="{% url 'wishList:joinWish' id=item.id %}">Add to my WishList</a> </td>
+				</tr>
+			{% endfor %}
+      </table>
+    </fieldset>
+  </body>
+</html>

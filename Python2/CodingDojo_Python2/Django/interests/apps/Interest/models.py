@@ -31,10 +31,15 @@ class Interests(models.Model):
     created_at = models.DateTimeField(auto_now_add='True')
     updated_at = models.DateTimeField(auto_now='True')
     # objects = InterestManager()
-class Users(models.Model):
-    name = models.CharField(max_length=50)
-    created_at = models.DateTimeField(auto_now_add='True')
-    updated_at = models.DateTimeField(auto_now='True')
+
+
+# class Users(models.Model):
+#     name = models.CharField(max_length=50)
+#     created_at = models.DateTimeField(auto_now_add='True')
+#     updated_at = models.DateTimeField(auto_now='True')
+
+
+
     # userInterest = models.ManyToManyField(Interests, related_name='user_interest')
     # interest = models.ForeignKey(Interests)
 

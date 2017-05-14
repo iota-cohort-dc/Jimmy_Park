@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Page</title>
+  </head>
+  <body>
+
+    <div>
+      <table>
+        <tr>
+          <th>User Name</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <th>{view(user name)}</th>
+          <th>{view}</th>
+          {# <a href="{% url 'interest:viewProfile'%}">{{view action}}</a> #}
+        </tr>
+      </table>
+    </div>
+    <a href="{% url 'interest:index'%}">enter another user interest</a>
+
+  </body>
+</html>

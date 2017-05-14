@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="{% url 'wishList:index' %}">Home</a><br><br>
+    <a href="{% url 'loginReg:logout' %}">Logout</a><br>
+    <h1>{{products.product}}</h1>
+    <h3>Users who added this product/item under their wish list: </h3>
+    {# {% for item in joiningusers %}
+      <p>{{item.name}}</p>
+    {% endfor %} #}
+  </body>
+</html>

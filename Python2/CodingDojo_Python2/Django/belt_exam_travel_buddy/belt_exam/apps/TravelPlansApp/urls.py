@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^joinTrip/(?P<id>\d+)$', views.joinTrip, name = 'joinTrip'),
     url(r'^showTrip/(?P<id>\d+)$', views.showTripPage, name = 'showTripPage'),
 
+
 ]

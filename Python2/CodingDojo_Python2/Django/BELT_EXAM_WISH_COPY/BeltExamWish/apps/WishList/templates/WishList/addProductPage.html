@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Product Page</title>
+  </head>
+  <body>
+    <a href="{% url "wishList:index" %}">Back</a>
+    <h3>Create a New Wish List Item</h3>
+     <form class="" action="{% url "wishList:addProduct" %}" method="post">
+        {% csrf_token %}
+        <p>Item/Product: <input type="text" name="product"></p>
+        <p><input type="submit"value="Add"></p>
+     </form>
+
+  </body>
+</html>

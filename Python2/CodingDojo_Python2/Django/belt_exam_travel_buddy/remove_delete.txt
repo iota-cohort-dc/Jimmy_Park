@@ -1,0 +1,13 @@
+def delete(request, item_id):
+    # DELETE the item completely from the data
+    Product.objects.get(id=item_id).delete()
+    # messages.success(request, "Successfully deleted")
+    return redirect(reverse('wishlist:index'))
+
+def remove(request, item_id):
+    # remove from my wish list but do not delete from the data
+    user = Person.objects.get(id=request.session['user_id'])
+    item = Product.objects.get(id=item_id)
+    item.group.remove(user)
+    # messages.success(request, "Successfully removed from Wishlist")
+    return redirect(reverse('wishlist:index'))

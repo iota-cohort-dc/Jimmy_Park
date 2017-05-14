@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interests Main Page</title>
+  </head>
+  <body>
+    <div>
+      <form action="{% url 'interest:addNewInterest' %}" method="post">
+          {% csrf_token %}
+        <p>Name: <input type="text" name="name"></p>
+        <p>Interests: <input type="text" name="interest"></p>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

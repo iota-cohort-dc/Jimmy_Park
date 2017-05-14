@@ -9,6 +9,7 @@ def index(): # define method function to apply logic to route
     if "counter" in session: # is the counter key in the session dictionary
         # if it is, plus one to it
         session['counter'] += 1
+        
     else:
         # if not, set key counter in session to 0
         session['counter'] = 0
