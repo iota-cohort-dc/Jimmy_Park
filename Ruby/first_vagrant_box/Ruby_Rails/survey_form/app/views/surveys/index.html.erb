@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Main Landing Page</title>
+  </head>
+  <body>
+    <h1>Surveys#index</h1>
+    <p>Find me in app/views/surveys/index.html.erb</p>
+    <fieldset>
+
+      <form action='' method='post'>
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <label>Name:</label> <br>
+          <input type='text' name='survey[name]' /> <br>
+          <label>Location:</label> <br>
+          <select name="survey[location]"> <br>
+              <option value="DC">DC</option>
+              <option value="Seatle">Seatle</option>
+              <option value="Silicon Valley">Silicon Valley</option>
+              <option value="Los Angeles">Los Angeles</option>
+              <option value="Dallas">Dallas</option>
+              <option value="Chicago">Chicago</option>
+              <option value="Berkley">Berkley</option>
+              <option value="Orange County">Orange County</option>
+          </select>
+          <label>Favorite Language:</label> <br>
+          <select name="survey[language]"> <br>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Python">Python</option>
+              <option value="Ruby">Ruby</option>
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+          </select>
+          <label>Comment (optional)</label> <br>
+          <textarea name="survey[comment]" rows="8" cols="80"></textarea> <br>
+          <input type='submit' value='Submit' />
+      </form>
+
+    </fieldset>
+  </body>
+</html>

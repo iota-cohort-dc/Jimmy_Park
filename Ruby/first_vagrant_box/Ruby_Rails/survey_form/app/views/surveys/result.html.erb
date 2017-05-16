@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Result Page (show info)</title>
+  </head>
+  <body>
+      <% if flash[:success] %>
+          <p> <%= flash[:success] %> </p>
+      <% end %>
+      <table>
+          <thead>
+              <tr>
+                  <td>Submitted Information</td>
+              </tr>
+              <tr>
+                  <td>Name:</td>
+                  <td><%= @result['name'] %></td>
+              </tr>
+              <tr>
+                  <td>Dojo Location:</td>
+                  <td><%= @result['location'] %></td>
+              </tr>
+              <tr>
+                  <td>Favorite Language:</td>
+                  <td><%= @result['language'] %></td>
+              </tr>
+              <tr>
+                  <td>Comment:</td>
+                  <td><%= @result['comment'] %></td>
+              </tr>
+          </thead>
+      </table>
+
+  </body>
+</html>
