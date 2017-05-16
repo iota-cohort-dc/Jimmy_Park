@@ -1,25 +1,25 @@
 class SurveysController < ApplicationController
   def index
-    # Set session views to zero if it doesnt exist yet
-    session['views'] ||=0
+    # Set session count to zero if it doesnt exist yet
+    session['count'] ||=0
   end
 
   def process_money
-    # increment the session views upon submission of the form
-    session['views'] = session['views'] + 1
+    # increment the session count upon submission of the form
+    session['count'] = session['count'] + 1
 
     # save the post data (params[:survey])
     session[:result] = params[:survey]
 
     # save success message to flash to show it once
-    flash[:success] = "Thanks for submitting this form! You have submitted this form #{session[:views]} time(s) now."
+    flash[:success] = "Thanks for submitting this form! You have submitted this form #{session[:count]} time(s) now."
 
     # To prevent submission of FORM withpage reload
     redirect_to '/surveys/result'
   end
 
   def result
-    # Save the data variable accessble in the views
+    # Save the data variable accessble in the count
     @result = session[:result]
   end
 end

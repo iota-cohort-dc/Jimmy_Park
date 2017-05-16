@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Integrates#show</h1>
-    <p>Find me in app/views/integrates/show.html.erb</p>
+<h1>Show this User</h1>
 
-  </body>
-</html>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Age:</th>
+	</tr>
+	<tr>
+		<td><%= @user.name %></td>
+		<td><%= @user.age %></td>
+	</tr>
+</table>

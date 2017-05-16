@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Integrates#index</h1>
-    <p>Find me in app/views/integrates/index.html.erb</p>
+<h1>All Users</h1>
+<table style="text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>Age:</th>
+		<th>Action:</th>
+		<th>Action button:</th>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><a href="users/<%=user.id%>"><%= user.name %></a></td>
+		<td><%= user.age %></td>
+		<td><a href="users/<%=user.id%>" data-method="delete">DELETE ME!</a></td>
 
-    
+		<td>
+		<form action="users/<%=user.id%>" method="post">
+		 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="hidden" name="_method" value="delete">
+		<button type="submit">DELETE BUTTON</button>
+		</form>
+		</td>
 
-  </body>
-</html>
+	</tr>
+
+	<% end %>
+</table>

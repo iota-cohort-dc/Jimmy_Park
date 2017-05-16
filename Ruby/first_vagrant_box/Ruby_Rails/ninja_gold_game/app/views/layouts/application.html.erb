@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NinjaGoldGame</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <style>
+    body{
+      background-color:#28536C;
+    }
+    .wrapper{
+      padding: 50px;
+    }
+    fieldset{
+      display: inline-block;
+      width: 170px;
+      height: 150px;
+      text-align: center;
+      color: white;
+    }
+    .yourGold{
+      display: block;
+      color: white;
+    }
+    .activityArea{
+      width: 500px;
+      height: 200px;
+      background-color: white;
+      overflow: scroll;
+      padding: 5px 10px 5px 20px;
+      color: ;
+    }
+    h3{
+      color: white;
+    }
+    a{
+      color: white;
+    }
+  </style>
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

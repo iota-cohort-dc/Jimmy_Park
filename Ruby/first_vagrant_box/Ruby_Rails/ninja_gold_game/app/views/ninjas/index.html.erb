@@ -1,0 +1,62 @@
+
+<div class="wrapper">
+    <div class="main">
+
+      <h3 class="yourgold">Your Gold: $<%= session[:gold] %> </h3>
+      <p><a href="/reset">Give me back your Gold!</a></p>
+
+      <fieldset>
+          <legend>Farm</legend>
+          <h2>Farm</h2>
+          <p>(earns 10-20 golds)</p>
+          <form class="" action="/handle" method="post">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="building" value="farm">
+              <input type="submit" name="" value="Find Gold!">
+          </form>
+      </fieldset>
+
+      <fieldset>
+          <legend>Cave</legend>
+          <h2>Cave</h2>
+          <p>(earns 5-10 golds)</p>
+          <form class="" action="/handle" method="post">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="building" value="cave">
+              <input type="submit" name="" value="Find Gold!">
+          </form>
+      </fieldset>
+
+      <fieldset>
+          <legend>House</legend>
+          <h2>House</h2>
+          <p>(earns 2-5 golds)</p>
+          <form class="" action="/handle" method="post">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="building" value="house">
+              <input type="submit" name="" value="Find Gold!">
+          </form>
+      </fieldset>
+
+      <fieldset>
+          <legend>Casino</legend>
+          <h2>Casino</h2>
+          <p>(earns/takes 0-5- golds)</p>
+          <form class="" action="/handle" method="post">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="hidden" name="building" value="casino">
+              <input type="submit" name="" value="Find Gold!">
+          </form>
+      </fieldset>
+
+      <h3>Activitiy: make this area overflow</h3>
+
+        <div class="activityArea">
+
+          <% session[:activity].reverse.each do |item| %>
+            <p><%= item %></p>
+          <% end %>
+        </div>
+
+    </div>
+</div>

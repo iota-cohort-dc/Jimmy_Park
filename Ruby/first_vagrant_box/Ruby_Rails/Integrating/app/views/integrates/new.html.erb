@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Integrates#new</h1>
-    <p>Find me in app/views/integrates/new.html.erb</p>
+<h1>Create New User</h1>
 
-  </body>
-</html>
+<h2>Create a new User</h2>
+
+<form action="/users" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="age" placeholder="Age">
+
+    <input type='submit' value='Create'>
+
+</form>

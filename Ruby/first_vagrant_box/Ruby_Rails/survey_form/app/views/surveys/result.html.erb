@@ -5,6 +5,7 @@
     <title>Result Page (show info)</title>
   </head>
   <body>
+      <!-- flash message from the def process_money in controller.rb -->
       <% if flash[:success] %>
           <p> <%= flash[:success] %> </p>
       <% end %>
@@ -31,6 +32,7 @@
               </tr>
           </thead>
       </table>
-
+      <!-- button/href link back to the Main Page  -->
+      <button> <a href="/" method="get">Back to Main</a> </button>
   </body>
 </html>

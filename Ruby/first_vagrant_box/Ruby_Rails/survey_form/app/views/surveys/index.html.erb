@@ -5,11 +5,13 @@
     <title>Survey Main Landing Page</title>
   </head>
   <body>
-    <h1>Surveys#index</h1>
-    <p>Find me in app/views/surveys/index.html.erb</p>
+    <h1>Survey </h1>
+
     <fieldset>
 
-      <form action='' method='post'>
+      <form action='/surveys' method='post'>
+          <!-- authenticity_token is csrf token equivelent -->
+          <!-- provides security -->
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <label>Name:</label> <br>
           <input type='text' name='survey[name]' /> <br>
@@ -36,7 +38,6 @@
           <textarea name="survey[comment]" rows="8" cols="80"></textarea> <br>
           <input type='submit' value='Submit' />
       </form>
-
     </fieldset>
   </body>
 </html>

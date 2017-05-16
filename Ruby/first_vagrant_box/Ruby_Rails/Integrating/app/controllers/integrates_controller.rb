@@ -1,22 +1,28 @@
-class IntegratesController < ApplicationController
+class UsersController < ApplicationController
   def index
-  end
-
-  def new
+    @users = User.all
   end
 
   def create
+    User.create(name: params[:name], age: params[:age])
+    redirect_to '/users'
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    User.find(params[:id]).update(name:params[:name], age:params[:age])
+    redirect_to '/users'
   end
 
-  def delete
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to '/users'
   end
 end

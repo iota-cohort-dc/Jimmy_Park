@@ -1,18 +1,42 @@
 Rails.application.routes.draw do
+  get 'users' => 'users#index'
 
-  get 'user' => 'integrates#index'
+  get 'users/new'
 
-  get 'user/new' => 'integrates#new'
+  post "users" => 'users#create'
 
-  get 'user' => 'integrates#create' #create
+  get 'users/:id' => 'users#show'
 
-  get 'user/:id' => 'integrates#show' #show
+  get 'users/:id/edit' => 'users#edit'
 
-  get 'user/:id' => 'integrates#edit' #edit
+  patch 'users/:id' => 'users#update'
 
-  get 'user/:id' => 'integrates#update' #update
+  delete 'users/:id' => 'users#destroy'
 
-  get 'user/:id' => 'integrates#delete' #delete
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+
+
+
+
+
+
+
+# Rails.application.routes.draw do
+#
+#   get 'user' => 'integrates#index'
+#
+#   get 'user/new' => 'integrates#new'
+#
+#   get 'user' => 'integrates#create' #create
+#
+#   get 'user/:id' => 'integrates#show' #show
+#
+#   get 'user/:id' => 'integrates#edit' #edit
+#
+#   get 'user/:id' => 'integrates#update' #update
+#
+#   get 'user/:id' => 'integrates#delete' #delete
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

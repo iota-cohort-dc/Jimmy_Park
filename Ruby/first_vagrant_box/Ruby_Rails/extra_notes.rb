@@ -17,7 +17,24 @@ FORMS --------------------------------------------------------------------------
 
   SEQUEL INJECTION -------------------------------------------------------------
     # inside the HTML, (ex.) inject in a table
-    <%= @result['name'] %>
+  "  <%= @result['name'] %>       "
+
+FORM UPDATE --------------------------------------------------------------------
+  # form for updating
+  <form action="/products/<%= @products.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="text" name="name" value="<%= @product.name %> ">
+    <input type="submit" value="Update Product">
+  </form>
+
+FORM DELETE --------------------------------------------------------------------
+
+  <form action="/product/<%= @product.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+    <input type="submit" value="Delete">
+  </form>
 
 TABLE --------------------------------------------------------------------------
   <table>
@@ -47,9 +64,56 @@ MARCO --------------------------------------------------------------------------
   <a href="users/<%=user.id%>" data-method="Delete">Delete Me!</a>
   data method is pointing to the action verb 'delete'
 
-UPDATE query to update person --------------------------------------------------
+
+INDEX --------------------------------------------------------------------------
+class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
+CREATE query to create person --------------------------------------------------
+  def create
+    User.create(name: params[:name], age: params[:age])
+    redirect_to '/users'
+  end
+SHOW query to show info --------------------------------------------------------
+  def show
+    @user = User.find(params[:id])
+  end
+
+EDIT query to edit -------------------------------------------------------------
+  def edit
+    @user = User.find(params[:id])
+  end
+
+UPDATE query to update ---------------------------------------------------------
   def update
-    User.find(params[:id]).update(name:params[:name], age: params[:age])
+    User.find(params[:id]).update(name:params[:name], age:params[:age])
+    redirect_to '/users'
+  end
+
+UPDATE query to update person --------------------------------------------------
+def update
+  User.find(params[:id]).update(name:params[:name], age: params[:age])
+end
+# another example
+def update
+  anime = Anime.find(params[:id])
+  anime.name = params[:name]
+  anime.save
+end
+
+DESTROY query to delete --------------------------------------------------------
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to '/users'
+  end
+  # another example
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to '/product'
+  end
 
 JSON API -----------------------------------------------------------------------
   json: User.find(params[:id])
@@ -57,7 +121,7 @@ JSON API -----------------------------------------------------------------------
 QUERY get all users ------------------------------------------------------------
   @user = User.find(params[:id])
 
-SESSION ----------------------------------------------------------------------
+SESSION ------------------------------------------------------------------------
   # set session to 0
   session['count'] = 0
   # increment session count
@@ -80,3 +144,7 @@ flash[:success] = "Thanks for submitting this form! You have submitted this form
 STRING INTERPOLATION
   "#{session[:views]}"
   "#{ }"
+
+  <% session[:activity].reverse.each do |item| %>
+  <%= item %>
+  <% end %>
