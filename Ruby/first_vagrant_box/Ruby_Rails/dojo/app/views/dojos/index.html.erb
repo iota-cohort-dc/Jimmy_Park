@@ -1,0 +1,37 @@
+
+<h1>Listing 3 Dojos</h1>
+<fieldset>
+    <table>
+        <thead>
+            <tr>
+                <th>Coding Dojo Branch</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% @dojos.each do |item| %>
+                  <tr>
+                      <td> <%= item.branch %> </td>
+                      <td> <%= item.street %> </td>
+                      <td> <%= item.city %> </td>
+                      <td> <%= item.state %> </td>
+                      <!-- <td>
+                        <form action="/delete/<%= item.id %>" method="post">
+                          <input type="hidden" name="_method" value="delete">
+                          <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+                          <input type="submit" value="Delete">
+                        </form>
+                      </td> -->
+
+                      <td> <a href="/show/<%= item.id %>"> Show</a> | <a href="edit/<%= item.id %>"> Edit</a> | <a href="delete/<%= item.id %>" data-method="delete"> Delete</a> </td>
+
+                  </tr>
+            <% end %>
+        </tbody>
+    </table>
+</fieldset>
+<a href="new">New Dojo</a>
