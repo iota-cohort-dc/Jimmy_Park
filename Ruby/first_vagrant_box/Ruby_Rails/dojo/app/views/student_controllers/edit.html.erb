@@ -1,0 +1,15 @@
+
+<h3>Edit Student</h3>
+
+<form action="/<%=@dojo.id%>/student/<%= @student.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="text" name="first_name" value="<%= @student.first_name %> ">
+  <input type="text" name="last_name" value="<%= @student.last_name %> ">
+  <input type="text" name="email" value="<%= @student.email %> ">
+
+  <input type="submit" value="Update Student">
+</form>
+
+<a href="/"> HOME </a>

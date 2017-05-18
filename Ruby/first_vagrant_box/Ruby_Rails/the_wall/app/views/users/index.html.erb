@@ -1,0 +1,22 @@
+
+<h2>Sign In</h2>
+
+<% if flash[:error] %>
+    <%  flash[:error].each do |item| %>
+        <p><%= item %></p>
+    <% end %>
+<% end %>
+
+
+
+<fieldset>
+
+<legend>Sign IN</legend>
+
+    <form action='/users/create' method='post'>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type='text' name='username' placeholder='name'/>
+      <input type='submit' value='Create'/>
+    </form>
+
+</fieldset>

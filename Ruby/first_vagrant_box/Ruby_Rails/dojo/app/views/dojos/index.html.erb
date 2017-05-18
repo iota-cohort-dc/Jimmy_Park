@@ -26,9 +26,11 @@
                           <input type="submit" value="Delete">
                         </form>
                       </td> -->
-
-                      <td> <a href="/show/<%= item.id %>"> Show</a> | <a href="edit/<%= item.id %>"> Edit</a> | <a href="delete/<%= item.id %>" data-method="delete"> Delete</a> </td>
-
+                      <td>
+                        <a href="/show/<%= item.id %>"> Show</a> |
+                        <a href="edit/<%= item.id %>"> Edit</a> |
+                        <a href="delete/<%= item.id %>" data-method="delete"> Delete</a>
+                      </td>
                   </tr>
             <% end %>
         </tbody>

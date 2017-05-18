@@ -5,4 +5,34 @@
 <p>City: <%= @dojo.city %></p>
 <p>State: <%= @dojo.state %></p>
 
+<fieldset>
+  <legend>test</legend>
+  <table>
+    <thead>
+      <tr>
+        <th>First Name: </th>
+        <th>Last Name: </th>
+        <th>Email: </th>
+        <th>Actions: </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.first_name %></td>
+          <td><%= student.last_name %></td>
+          <td><%= student.email %></td>
+          <td>
+              <a href="/<%=@dojo.id%>/student/show/<%=student.id%>"> Show </a> |
+              <a href="/<%=@dojo.id%>/student/<%=student.id%>/edit">Edit</a> |
+              <a href="/<%=@dojo.id%>/student/<%=student.id%>" data-method="delete" >Delete</a>
+          </td>
+          <% end %>
+        </tr>
+    </tbody>
+  </table>
+</fieldset>
+
+<a href="/<%= @dojo.id %>/student/new">Add New Student</a>
+
 <a href="/"> HOME </a>

@@ -9,8 +9,10 @@ class DojosController < ApplicationController
   def create
     @check = DojoDojo.create(branch:params[:branch], street:params[:street], city:params[:city], state:params[:state] )
 
-    
+
     if @check.valid?
+
+      # redirect_to root_url, notic: "you creaTED DOJO!"
     redirect_to "/"
     else
       flash[:errors] = @check.errors.full_messages
@@ -20,7 +22,8 @@ class DojosController < ApplicationController
 
   def show
     @dojo = DojoDojo.find(params[:id])
-    render 'dojos/show'
+    @students = Student.where(dojo_dojo_id: @dojo)
+    # render 'dojos/show'
   end
 
   def delete

@@ -14,6 +14,25 @@ Rails.application.routes.draw do
 
   delete 'delete/:id' => 'dojos#delete'
 
+# --------------------------------------|
+# proper way @@ url convention @@
+
+  get ':dojo_id/student' => 'student_controllers#index'
+# @@  dojo/:dojo_id/student
+  get ':dojo_id/student/new' => 'student_controllers#new'
+# @@  dojo/:dojo_id/student/new
+  post ':dojo_id/student/create' => 'student_controllers#create'
+# @@  dojo/:dojo_id/student/create
+  get ':dojo_id/student/show/:id' => 'student_controllers#show'
+# @@  dojo/:dojo_id/student/:id/show
+  get ':dojo_id/student/:id/edit' => 'student_controllers#edit'
+# @@  dojo/:dojo_id/student/:id/edit
+  delete ':dojo_id/student/:id' => 'student_controllers#delete'
+# @@  dojo/:dojo_id/student/:id
+  patch '/:dojo_id/student/:id' => 'student_controllers#update'
+# @@  dojo/dojo_id/student/:id
+# --------------------------------------|
+
 
 
 
