@@ -1,2 +1,30 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<p>Coding Dojo Wall</p>
+<h4>Welcome <%= @user.username %></h4>
+<a href="/">LOGOUT</a>
+<hr>
+<h1>Post a Message</h1>
+
+<form action="/messages/" method="post">
+  <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+  <input type="hidden" name="message_id" value="message.id">
+  <textarea name="content" rows="8" cols="80"></textarea>
+  <input type="submit" name="" value="Post a Message">
+</form> <br> <br>
+
+<% @messages.each do |message| %>
+  <p> <%= message.content %> <%= message.created_at %> </p>
+
+    <%= @comment.each do |item| %>
+    <% if item.message_id == message.id%>
+    <p> <%= item.comment_content %> <%= item.created_at %> </p>
+
+    <% end %>
+    <% end %>
+  <h3>Comments</h3>
+  <form action="/messages/<%= message.id %>/comment" method="post">
+    <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+    <input type="hidden" name="message_id" value="<%= message.id %>">
+    <textarea name="comment_content" rows="8" cols="80"></textarea>
+    <input type="submit" name="" value="Post a Comment">
+  </form>
+<% end %>
