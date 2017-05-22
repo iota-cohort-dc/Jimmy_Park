@@ -18,12 +18,13 @@ class UsersController < ApplicationController
         redirect_to :back
       end
     end
+  end
 
-    def logout
-      session.clear
-      #session[:user] = nil
-      redirect_to "/"
-    end
+  def logout
+    session.clear
+    # session[:user] = nil
+    reset_session
+    redirect_to "/"
   end
 
 end

@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   has_many :messages
   has_many :comments
 
-  validates :username, presence: true, length: { 3..20 }
   # length: { minmum 3 }
-  validates :username, uniqueness: { case_sensitive: false }
+
+  validates :username, presence: true, length: { minimum: 5 }, uniqueness: { case_sensitive: false }
+
 
 end
