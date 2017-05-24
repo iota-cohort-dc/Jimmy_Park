@@ -11,11 +11,22 @@ Rails.application.routes.draw do
   #
   # get 'profile' => 'users#profile'
 
+  #
+  # resources :sessions, only: [:new, :create, :destroy]
+  # resources :users, only: [:show]
 
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:show]
+get '' => 'sessions#new'
+
+get 'users/new' => 'sessions#new'
+
+get 'sessions/new' => 'sessions#new'
+
+post 'sessions' => 'sessions#create'
+
+# destroy 'sessions/:id' => 'sessions#destroy'
 
 
+get 'users/:id' => 'users#show'
 
 
 

@@ -1,8 +1,15 @@
+<h2>Errors will popup here</h2>
+<% if flash[:error] %>
+    <%  flash[:error].each do |item| %>
+        <p><%= item %></p>
+    <% end %>
+<% end %>
+
 <form class="" action="/sessions" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <!-- <input type="text"   name="name" value=""> -->
-  <input type="text" id="Email"  name="Email">
-  <input type="password" id="Password"  name="Password">
-  <!-- <input type="password"   name=""> -->
-  <input type="submit" name="Log In" value="Log In">
+  <p>Name: <input type="text" id="Name" name="Name" value=""></p>
+  <p>Email:  <input type="text" id="Email"  name="Email"></p>
+  <p>Password: <input type="password" id="Password"  name="Password"></p>
+  <p>Confirm Password: <input type="password" id="Password_Confirmation" name="Password_Confirmation"></p>
+  <input type="submit" name="Join" value="Join">
 </form>
