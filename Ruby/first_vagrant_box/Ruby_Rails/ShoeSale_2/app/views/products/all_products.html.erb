@@ -1,0 +1,39 @@
+<h3>Hi <%= current_user.first_name %></h3>
+<br>
+<a href="/products/index">Go to Dashboard</a>
+<br>
+<h1>All Products</h1>
+<br>
+<fieldset style="padding: 20px;">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Seller</th>
+                <th>Date Posted</th>
+                <th>amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @all_products.each do |item| %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.user.first_name %></td>
+                <td><%= item.created_at.strftime("%B #{item.created_at.day.ordinalize}, %Y") %></td>
+                <td><%= number_to_currency(item.amount) %></td>
+                <td>
+                    <form class="" action="/products/<%= item.id %>/buy" method="post">
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type="hidden" name="_method" value="patch">
+                        <input type="hidden" name="name" value="">
+                        <input type="hidden" name="user_id" value="">
+                        <input type="hidden" name="amount" value="">
+                        <input type="submit" name="" value="BUY NOW">
+                    </form>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</fieldset>

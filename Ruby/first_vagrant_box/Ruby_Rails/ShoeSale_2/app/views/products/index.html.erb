@@ -1,0 +1,100 @@
+<h3>Hi <%= current_user.first_name %></h3>
+<br>
+<a href="/products/all_products">Go to All Products</a>
+<br>
+
+sell a product
+<form action="/products/create" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    <p>Name: <input type="text" name="name" value=""></p>
+    <p>Amount: <input type="integer" name="amount" value=""></p>
+    <input type="submit" name="" value="Set">
+</form>
+
+<h3>Your products that are not yet sold:</h3>
+<fieldset style="padding: 20px;">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Date Posted</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @products.each do |item| %>
+            <% if current_user.id === item.user.id %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.created_at.strftime("%B #{item.created_at.day.ordinalize}, %Y") %></td>
+                <td><%= item.amount %></td>
+                <td>
+                    <% if current_user.id === item.user_id %>
+                    <form action="/products/<%= item.id %>" method="post">
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="submit" name="delete" value="delete">
+                    </form>
+                    <% end %>
+                </td>
+            </tr>
+            <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</fieldset>
+
+<br>
+<br>
+
+<h3>SOLD -----------------------------------------</h3>
+<fieldset style="padding: 20px;">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Date Bought</th>
+                <th>Buyer</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @sold.each do |x| %>
+            <tr>
+              <td><%= x.product.name %></td>
+              <td><%= x.created_at.strftime("%B #{x.created_at.day.ordinalize}, %Y") %></td>
+              <td><%= x.user.first_name %></td>
+              <td><%= number_to_currency(x.product.amount) %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</fieldset>
+
+<br>
+<br>
+
+<h3>I PURCHASED -------------------------------</h3>
+<fieldset style="padding: 20px;">
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Date Bought</th>
+                <th>Seller</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @purchase.each do |z| %>
+                <tr>
+                    <td><%= z.product.name %></td>
+                    <td><%= z.product.created_at.strftime("%B #{z.created_at.day.ordinalize}, %Y") %></td>
+                    <td><%= z.user.first_name %></td>
+                    <td><%= number_to_currency(z.product.amount) %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</fieldset>

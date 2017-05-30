@@ -1,4 +1,82 @@
 Rails.application.routes.draw do
+
+  get 'comments/index'
+
+  get 'comments/new'
+
+  get 'comments/create'
+
+  get 'comments/show'
+
+  get 'comments/edit'
+
+  get 'comments/update'
+
+  get 'comments/destroy'
+
+# User ---------------------------------|
+
+  get '' => 'users#index' # shows index page with Login Registration
+
+  post 'users/login' => 'users#login'
+
+  post 'users/' => 'users#create'  # create
+
+  get 'users/show'
+
+  get 'users/:id/edit' => 'users#edit'
+
+  patch 'users/:id' => 'users#update'
+
+  delete 'users/:id' => 'users#destroy'
+
+# Event --------------------------------|
+
+  get 'events/index' => 'events#index'
+
+  get 'events/new'
+
+  get 'events/:id' => 'events#show'
+
+  post 'events' => 'events#create'
+
+  get 'events/:id/cancel' => 'events#cancel'
+
+  get 'events/:id/join' => 'events#join'
+
+  get 'events/:id/edit' => 'events#edit'
+
+  patch 'events/:id' => 'events#update'
+
+  get 'events/edit'
+
+  get 'events/update'
+
+  get 'events/:id/destroy' => 'events#destroy'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

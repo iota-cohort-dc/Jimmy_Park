@@ -1,0 +1,34 @@
+
+<h1> <%= @event.name %> </h1>
+<a href="/events/index">Events Dashboard</a>
+
+<p>Host: <%= @event.user.first_name %> </p>
+<p>Date: <%= @event.date %> </p>
+<p>Location: <%= @event.location %> </p>
+<p>People who are attending the event: <%= @participant.count %> </p>
+
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>State</th>
+        </tr>
+    </thead>
+    <tbody>
+      <%= @participant.each do |item| %>
+        <tr>
+            <td> item.name </td>
+            <td> item.location </td>
+            <td> item.state </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<h3>Discussion about this Event</h3>
+<br>
+<fieldset>
+    <p> </p>
+</fieldset>
