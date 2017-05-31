@@ -906,6 +906,73 @@ function copyThat (stk){  // this has not been tested
 	return copyStack;
 }
 
+// ------------------------------------------------------------------>
+// ------------------------------------------------------------------>
+// ------------------------------------------------------------------>
+// --------------------- Doubly Linked List ------------------------->
+
+function DLNode(value){
+	this.val = value;
+	this.prev = null;
+	this.next = null;
+}
+funciton DList(){
+	this.head = null;
+	this.tail = null;
+	this.KthList = function(k){
+		var current = this.tail;
+		for(var i = 1; i < k; i++){
+			current = current.prev;
+		}
+		return current.val;
+	}
+	this.Palindrone = function(){
+		if(!this.head){
+			return false;
+		}
+		var F = this.head;
+		var R = this.tail;
+		while(F != R){
+			if(F.val == R.val){
+				F = F.next;
+				R = R.prev;
+			}
+			else {
+				return false;
+			}
+			if(F == this.tail){
+				break;
+			}
+		}
+		return true;
+	}
+}
+
+
+// ------------------------------------------------------------------>
+// ------------------------------------------------------------------>
+// ------------------------------------------------------------------>
+// --------------------- RECURRSION SIGMA ------------------------->
+
+function Sigma(num){
+	if(num == 1){
+		return num;
+	}
+	else {
+		return num + Sigma(num - 1) + num
+	}
+}
+
+Sigma(5)
+		Sigma(num - 1) --> Sigma(5 - 1) + 5 --> Sigma(4) + 5 -->
+		Sigma(num - 1) --> Sigma(4 - 1) + 5 --> Sigma(3) + 5 -->
+		Sigma(num - 1) --> Sigma(3 - 1) + 5 --> Sigma(2) + 5 -->
+		Sigma(num - 1) --> Sigma(2 - 1) + 5 --> Sigma(1) + 5 -->
+
+
+
+
+
 
 //<------------------------- deck of cards -------------------------->
 

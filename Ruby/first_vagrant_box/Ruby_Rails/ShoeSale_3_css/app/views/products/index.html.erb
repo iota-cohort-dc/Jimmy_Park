@@ -1,0 +1,102 @@
+<div class="wrapper">
+    <h3>Hi <%= current_user.first_name %></h3>
+    <br>
+    <a href="/products/all_products">Go to All Products</a>
+    <br>
+    <h3>Set Product</h3>
+    <form action="/products/create" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+        <p>Name: <input type="text" name="name" value=""></p>
+        <p>Amount: <input type="integer" name="amount" value=""></p>
+        <input type="submit" name="" value="Set">
+    </form>
+    <h3>Your products that are not yet sold:</h3>
+    <fieldset style="padding: 20px;">
+        <table class="table">
+            <thead class="row header">
+                <tr >
+                    <th class="cell">Product</th>
+                    <th class="cell">Date Posted</th>
+                    <th class="cell">Amount</th>
+                    <th class="cell">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @unsold.each do |item| %>
+                <% @total_not_sold += item.amount %>
+                <tr class="row">
+                    <td class="cell"><%= item.name %></td>
+                    <td class="cell"><%= item.created_at.strftime("%B #{item.created_at.day.ordinalize}, %Y") %></td>
+                    <td class="cell"><%= number_to_currency(item.amount) %></td>
+                    <td class="cell">
+                        <form action="/products/<%= item.id %>" method="post">
+                            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="submit" name="delete" value="delete">
+                        </form>
+                        <% end %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <h4>Items Not Sold Total = <%= @total_not_sold %></h4>
+    <br>
+    <br>
+    <h3>Sales</h3>
+    <fieldset style="padding: 20px;">
+        <table class="table">
+            <thead class="row header green">
+                <tr>
+                    <th class="cell">Product</th>
+                    <th class="cell">Date Bought</th>
+                    <th class="cell">Buyer</th>
+                    <th class="cell">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @sold_items.each do |item| %>
+              <% if item.product.user == current_user %>
+              <% @total_sold += item.product.amount %>
+                <tr>
+                  <td class="cell"><%= item.product.name %></td>
+                  <td class="cell"><%= item.created_at.strftime("%B #{item.created_at.day.ordinalize}, %Y") %></td>
+                  <td class="cell"><%= item.user.first_name %></td>
+                  <td class="cell"><%= number_to_currency(item.product.amount) %></td>
+                </tr>
+              <% end %>
+              <% end %>
+            </tbody>
+        </table>
+    </fieldset>
+    <h4>Sold Total = <%= @total_sold %></h4>
+    <br>
+    <br>
+    <h3>Purchases</h3>
+    <fieldset style="padding: 20px;">
+        <table class="table">
+            <thead class="row header blue">
+                <tr>
+                    <th class="cell">Product</th>
+                    <th class="cell">Date Bought</th>
+                    <th class="cell">Seller</th>
+                    <th class="cell">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @purchases.each do |item| %>
+                <% if item.user.id == current_user.id %>
+                <% @total_purchased += item.product.amount %>
+                    <tr>
+                        <td class="cell"><%= item.product.name %></td>
+                        <td class="cell"><%= item.product.created_at.strftime("%B #{item.created_at.day.ordinalize}, %Y") %></td>
+                        <td class="cell"><%= item.product.user.first_name %></td>
+                        <td class="cell"><%= number_to_currency(item.product.amount) %></td>
+                    </tr>
+                <% end %>
+                <% end %>
+            </tbody>
+        </table>
+    </fieldset>
+    <h4>Purchase Total = <%= @total_purchased %></h4>
+</div>
