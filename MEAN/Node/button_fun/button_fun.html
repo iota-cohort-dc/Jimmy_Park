@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <style type="text/css">
+      button{
+    	  background-color: blue;
+    	  color: white;
+      }
+      .red{
+      	background-color: red;
+      }
+      .green{
+      	background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button id="myButton" type="button" name="button">Press This Button</button>
+    <button>Click Me!</button>
+    <button>No, Click Me!!!</button>
+    <button>Me Me Me!!!</button>
+
+    <script type="text/javascript">
+      $(document).on('click', 'button', function(){
+      	$(this).toggleClass("red");
+      });
+
+      $("button").hover(function(){
+      	$(this).addClass("green")
+      }, function(){ $(this).removeClass("green") });
+    </script>
+
+
+  </body>
+</html>
