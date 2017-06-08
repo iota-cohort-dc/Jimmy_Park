@@ -796,7 +796,7 @@ function SLQueue(){
 	}
 }
 
-//<------------------------- isEmpty -------------------------->
+//<------------------------- isEmpty ------------------------------------------>
 // Create SLQueue method isEmpty() that returns whether our queue contains no values
 
 function SLQueue(){
@@ -812,7 +812,7 @@ function SLQueue(){
 	}
 }
 
-//<----------------------------- Size ------------------------------->
+//<----------------------------- Size ----------------------------------------->
 // Create SLQueue method size() that returns the number of values in our queue
 
 function SLQueue(){
@@ -833,15 +833,11 @@ function SLQueue(){
 		return count;
 	}
 }
-//<----------------------------- Stack------------------------------->
-//<----------------------------- Stack------------------------------->
-//<----------------------------- Stack------------------------------->
-//<----------------------------- Stack------------------------------->
-
-//<----------------------------- push ------------------------------->
-//<----------------------------- pop ------------------------------->
-//<----------------------------- return top ------------------------------->
-//<----------------------------- contains ------------------------------->
+//<----------------------------- Stack ---------------------------------------->
+//<----------------------------- push ----------------------------------------->
+//<----------------------------- pop ------------------------------------------>
+//<----------------------------- return top ----------------------------------->
+//<----------------------------- contains ------------------------------------->
 
 function SLStack(){
 	this.val = value;
@@ -952,16 +948,26 @@ funciton DList(){
 // ------------------------------------------------------------------>
 // ------------------------------------------------------------------>
 // ------------------------------------------------------------------>
-// --------------------- RECURRSION SIGMA ------------------------->
+// --------------------- RECURRSION SIGMA --------------------------->
 
-function Sigma(num){
+function rSigma(num){ // this algorithm is NOT complete
 	if(num == 1){
 		return num;
 	}
 	else {
-		return num + Sigma(num - 1) + num
+		return num + Sigma(num - 1) + num;
 	}
 }
+
+function helperSigma(num){
+	var sum = 0;
+	for(var i = 0; i <= num; i++){
+		sum += i;
+	}
+	return sum;
+}
+console.log(rSigma(num));
+console.log(helperSigma(5));
 
 Sigma(5)
 		Sigma(num - 1) --> Sigma(5 - 1) + 5 --> Sigma(4) + 5 -->
@@ -970,10 +976,54 @@ Sigma(5)
 		Sigma(num - 1) --> Sigma(2 - 1) + 5 --> Sigma(1) + 5 -->
 
 
+// --------------------- RECURRSION Factorial------------------------>
 
+function rfactorial(num){
+  if(num == 1){
+    return num;
+  }
+	if(num <= 0){
+		num = 1;
+	}
+  else {
+		Math.floor(num);
+    return rfactorial(num-1) * num;
+  }
+}
+console.log(rfactorial(6));
+console.log(rfactorial(15));
+console.log(rfactorial(22));
 
+// ------------------- RECURRSION Binary Search --------------------->
 
+function rBinarySearch(arr, num){
+	if(num == arr[0] || num == arr[arr.length - 1]){
+		return true:
+	}
+	return rBinarySearchHelper(arr, num, 0, (arr.length - 1));
+}
 
+function rBinarySearchHelper(arr, num, beg, end){
+	var mid = Math.floor((beg + end) / 2);
+	if(num == beg || num == mid || num == end){
+		return true;
+	}
+	if(num < arr[mid]){
+		end = mid;
+	}
+	if(num > arr[mid]){
+		beg = mid;
+	}
+	if(beg == mid || end == mid){
+		return false;
+	}
+	rBinarySearchHelper(arr, num, beg, end);
+}
+
+rBinarySearch([1,2,7,9,10,13],8) // invoking algorithm
+
+// ------------------------------------------------------------------>
+// ------------------------------------------------------------------>
 //<------------------------- deck of cards -------------------------->
 
 function DeckConstructor(){
