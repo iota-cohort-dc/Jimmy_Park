@@ -3,36 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Survey Form</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+      <script type ="text/javascript">
+          $(document).ready(function (){
+        		  var socket = io.connect();
+          $('#dojo_form').submit(function(e) {
+	        		e.preventDefault();
+							socket.emit("posting_form", {
+					  	name: $('#name').val(),
+	                location: $('#location').val(), language: $('#language').val(), comment: $('#comment').val() });
+					});
+					socket.on('updated_message', function (data){
+					    $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+					});
+					socket.on('random_number', function (data){
+					   $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+					});
+      });
+  </script>
 </head>
 <body>
-	<form action="/results" method="post">
-		<div id="name">
-			<label for="name">Your Name: </label>
-			<input type="text" name="name" id="">
-		</div>
-		<div id="location">
-			<label for="location">Dojo Location: </label>
-			<select name="dojo_location">
-			  <option value="Mountain View">Mountain View</option>
-			  <option value="Seattle, WA">Seattle, WA</option>
-			  <option value="Los Angeles">Los Angeles</option>
-			  <option value="Canada">Canada</option>
-			</select>
-		</div>
-		<div id="language">
-			<label for="language">Favorite Language: </label>
-			<select name="favorite_language">
-			  <option value="NodeJs">NodeJs</option>
-			  <option value="PHP">PHP</option>
-			  <option value="Express">Express</option>
-			  <option value="Javascript">Javascript</option>
-			</select>
-		</div>
-		<div id="comment">
-			<label for="comment">Comment (optional):</label>
-			<textarea name="comment"></textarea>
-		</div>
-		<input type="submit" value="Submit">
-	</form>
+	<fieldset style="width:250px; padding:20px">
+		<div id="message"></div> 
+		<div id="number"></div>
+		<form id = "dojo_form" action="">
+				<label style="display:block;" for="name">Your Name: <input type="text" id="name"></label>
+				<label style="display:block;" for="location">Dojo Location:<select id='location'>
+						location: <option value='Silicon Valley'>Silicon Valley</option>
+						location: <option value='Seattle'>Seattle</option>
+						location: <option value='Los Angeles'>Los Angeles</option>
+						location: <option value='Dallas'>Dallas</option>
+						location: <option value='Washington DC'>Washington DC</option>
+						location: <option value='Chicago'>Chicago</option>
+						location: <option value='Berkeley'>Berkeley</option>
+						location: <option value='Orange County'>Orange County</option>
+				</select>
+				<label style="display:block;" for="language">Favorite Language:<select id='language'>
+						language: <option value='Java'>Java</option>
+						language: <option value='Python'>Python</option>
+						language: <option value='Ruby'>Ruby</option>
+						language: <option value='PhP'>PhP</option>
+				</select>
+				<label style="display:block;" for="comment">Comment (optional):</label>
+				<input style="display:block; width: 200px; height:100px;" type="text" id="comment">
+				<input style="display:block;" type="submit" name="submit" value="Submit">
+		</form>
+</fieldset>
 </body>
 </html>

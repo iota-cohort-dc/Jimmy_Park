@@ -1,35 +1,31 @@
-// require express
-// path module -- try to figure out where and why we use this
-// create the express app
-// static content
-// setting up ejs and our views folder
-var express = require("express");
-var path = require("path");
-var app = express();
+var express = require("express"); // require express
+var path = require("path");  // path module -- try to figure out where and why we use this
+var app = express(); // create the express app
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "./static")));
-app.set('views', path.join(__dirname, './views'));
-app.set('view engine', 'ejs');
-// root route to render the index.ejs view
-app.get('/', function(req, res) {
+app.set('views', path.join(__dirname, './views')); // setting up ejs and our views folder
+app.set('view engine', 'ejs'); // setting up ejs and our views folder
+app.get('/', function(req, res) { //// this is rendering the index.ejs from views folder
   res.render("index");
 });
 // post route for adding a user
-app.post('/results', function(req, res) {
-  var survey = req.body;
+app.post('/results', function(req, res) { //// this is is from the FORM
+  var survey = req.body;                  //// this is getting content from FORM and setting it to a variable survey
   console.log("POST DATA", req.body);
- // This is where we would add the user to the database
- // Then redirect to the root route
-  res.render('results', {survey: survey});
+  res.render('results', {survey: survey});//// this is passing content to parse info on the page.  Parsing to the page.
 });
 // tell the express app to listen on port 8000
-app.listen(8000, function() {
+var server = app.listen(8000, function() {
  console.log("listening on port 8000");
 });
-var io = require('socket.io').listen(server);
+//<----------- below is where we use SOCKET ---------------------->
+var io = require('socket.io').listen(server); //// ((server)) is from line 25
 io.sockets.on('connection', function (socket) {
-  console.log("WE ARE USING SOCKETS!");
-  console.log(socket.id);
-  //all the socket code goes in here!
+  socket.on("posting_form", function (data){
+    var random_number = Math.floor((Math.random() * 1000) + 1);
+    socket.emit('updated_message', {response: data});
+    socket.emit('random_number', {response: random_number});
+    console.log(socket.id);
+  })
 })
