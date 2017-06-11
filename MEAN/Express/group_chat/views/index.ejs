@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Group Chat</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js">
+    </script>
+
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      var socket = io.connect();
+      var userName  = prompt("Who are you????");
+      console.log(userName);
+      socket.emit("send_user_name", {"name": userName})
+      socket.on("send_user_name", function(data){
+        for(var i =0; i < data.all_users.length; i++){
+          $('#users').append(`<p> ${data.all_users[i]} </p>`)
+          console.log(data);
+        }
+      })
+      $('#submitButton').click(function(){
+        var message = $('#chatInput').val();
+        socket.emit('send_message', {"message": message, "sender": socket.id})
+      })
+      socket.on("send_message", function(data){
+        $("#chatBox").append(`<p> ${data.message} - ${data.sender}</p>`)
+      })
+      socket.on("user_left", function(data){
+        $("#users").html("")
+        for(var i = 0; i < data.users.length; i++){
+          $('#users').append(`<p>${data.users[i]}</p>`)
+        }
+          console.log(data)
+        }
+      )
+    })
+
+    </script>
+  </head>
+  <body>
+
+    <div id="chatBox"></div>
+    <input type="text" name="chatInput" id="chatInput" placeholder="Enter Message Here">
+    <button id="submitButton">Send</button>
+    <div id="users"></div>
+    <style type="text/css">
+    #chatBox{
+      width: 75%;
+      overflow-y:scroll;
+      height: 450px;
+      border: 2px solid black;
+      margin: auto;
+    }
+    #users{
+      width: 75%;
+      overflow-y: scroll;
+      height: 150px;
+      border: 1px solid black;
+      margin: auto;
+    }
+    #chatInput{
+      width: 75%;
+      margin: auto;
+      display: block;
+    }
+    #submitButton{
+      margin: auto;
+      display: block;
+    }
+    </style>
+
+    <h1>We set up thing correctly</h1>
+  </body>
+</html>

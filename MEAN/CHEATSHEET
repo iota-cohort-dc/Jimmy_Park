@@ -1,0 +1,91 @@
+----------------------
+mongodb/
+----------------------
+
+mongod
+
+If that doesnt work, try...
+sudo mongod
+
+control + c     //shut down
+
+mongo           //to disconnect
+
+Shutting down if your mongod window got closed:
+This is harder.  Open a terminal window and type:
+
+ps -ax | grep mongo  // then copy the number on the left of the row that shows 'sudo mongo' (or if that's not there, just 'mongo')  This is the process ID of the mongod command you ran.  Take that number and type
+
+sudo kill *that_number*   // And you'll be good.  The kill command tells a process ID to terminate.  Intense terminal stuff, huh?
+
+show dbs             // shows all db you have
+
+use dataBaseName     // switch to new database
+
+use dataBaseName     // switch to new database
+
+db.dropDatabase()    // delete database
+
+dataBaseName     // create new db // maybe use "use" before database name
+
+db.createCollection('users')  // to create a table
+
+db.users.insert({name: "Trey" })  // (((document)))// equivalent to a (((row)))
+
+db.users.drop()
+
+show collections     // shows tables of db // ex. Users, Authors, Books
+
+db.ninjas.find()
+
+db.ninjas.find().pretty()
+
+db.ninjas.find({})
+
+db.ninjas.find({name: "Trey"}).pretty()
+
+db.ninjas.remove({name: "Trey"})  // this will remove ALL ninjas with name Trey
+
+db.ninjas.remove({name: "Trey"}, true) // if there were multiple people with the same name and you want to remove only one.
+
+db.students.update({_id: ObjectId("5463d871a6a96d5ed6252f4d")}, {$push: {interests: 'snowboarding'}})
+
+db.COLLECTION.update({QUERY}, {$pop: {array_key: (1 or -1)}})
+
+db.COLLECTION.update({QUERY}, {$pull: {array_key: VALUE}})
+
+
+----------------------
+request / response
+----------------------
+
+npm init
+
+npm init -y
+
+npm install express --save
+
+npm install ejs --save
+
+npm install body-parser --save
+
+npm install
+
+npm install socket.io --save
+
+--------------------------------
+steps for starting a new project
+--------------------------------
+create folder
+cd into folder
+create static folder
+create views folder
+create server.js
+npm init -y
+npm install ejs
+npm install express --save
+npm install body-parser --save
+npm install socket.io --save
+create index.html, put them in static folder
+create style.css, put them in static folder
+create html.ejs, put them in views folder

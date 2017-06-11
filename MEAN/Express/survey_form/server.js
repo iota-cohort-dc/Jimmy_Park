@@ -6,7 +6,7 @@ var path = require("path");
 var bodyParser = require('body-parser');
 // invoke var express and store the resulting application in var app
 var app = express();
-// =================================================================
+//=================================================================
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, "./static")));
 // setting up ejs and our views folder
