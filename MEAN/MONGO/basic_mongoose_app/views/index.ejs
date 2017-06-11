@@ -7,7 +7,12 @@
   <body>
 
     <h2>Submitted Information</h2>
-
+  	<ul>
+        <% for(var i = 0; i < users.length; i ++) {%>
+      		<li>Name: <strong> <%= users[i].name %> </strong></li>
+      		<li>Age: <strong> <%= users[i].age %> </strong></li>
+        <% } %>
+  	</ul>
 
     <fieldset>
       <form action="/users" method="post">

@@ -20,12 +20,12 @@ app.set('view engine', 'ejs');
 //-------------------------------------------------
 app.get('/', function(req, res){
   User.find({}, function(err, users){
+    res.render('index',{users: users});
+    console.log(User.name); // this console.log does not work.
   })
-  console.log(users.age);
-  res.redirect('/',{users: users});
-
-
 })
+
+
 app.post('/users', function(req, res){
   console.log('POST DATA', req.body);
   var user = new User({name: req.body.name, age: req.body.age});
