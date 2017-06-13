@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotes Page</title>
+  </head>
+  <body>
+    <h3>Here are the awesome quotes!</h3>
+    <a href="/">Home</a>
+
+
+      <% for(var i = 0; i < quotes.length; i++){ %>
+        <p>"<%= quotes[i].quote %>"</p>
+        <p>-<%= quotes[i].name %> at <%= quotes[i].date %></p>
+        <hr>
+      <% } %>
+
+  </body>
+</html>

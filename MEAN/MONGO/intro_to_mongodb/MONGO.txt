@@ -49,6 +49,10 @@
 	db.students.update({}, {$unset:{lucky_number:""}},{multi:true})
 // 19. Add a 'updated_on' field, and set the value as the current date.
 	db.students.update({}, {$currentDate:{updated_on:true}},{multi:true})
+// Delete everything in database
+	db.animlas.remove({}, false)
+// Delete one
+	db.animals.remove({}, true)
 
 //-------------------------------------------
 // Create a Schema for Users
