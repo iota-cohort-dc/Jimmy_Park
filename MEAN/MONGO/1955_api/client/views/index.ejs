@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>1955 API Assignment</title>
+  </head>
+  <body>
+    <h1>People born in 1955</h1>
+    <%= for (item in people) { %>
+      <p>Name: <%= people[i].name %></p>
+      <form action="/remove/<%= people[i]._id %>/" method="post">
+        <input type="submit" value="Remove">
+      </form>
+      <hr>
+    <% } %>
+  </body>
+</html>
