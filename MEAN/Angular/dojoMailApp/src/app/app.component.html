@@ -1,0 +1,20 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center; font-family: sans-serif; margin:200px;">
+<fieldset>
+  <h1>{{ title }}</h1>
+  <table>
+      <tr>
+          <th>Email</th>
+          <th>Importance</th>
+          <th>Subject</th>
+          <th>Content</th>
+      </tr>
+      <tr  *ngFor="let email of emails, let i = index">
+        <td> {{ emails[0].email[i] | lowercase }} </td>
+        <td> {{ emails[1].importance[i] }} </td>
+        <td> {{ emails[2].subject[i] }} </td>
+        <td> {{ emails[3].content[i] }} </td>
+      </tr>
+</table>
+</fieldset>
+</div>

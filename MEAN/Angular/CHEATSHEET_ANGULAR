@@ -1,0 +1,43 @@
+
+
+npm install -g @angular/cli  // command line interface
+
+ng new myFirstAngularApp  // can be called whatever
+
+cd myFirstAngularApp
+
+ng generate component my-component   // Creates a component
+
+ng generate service my-service   // Creates a service
+
+ng generate class my-class    // Creates a class
+
+
+ng serve
+
+localhost 4200 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
